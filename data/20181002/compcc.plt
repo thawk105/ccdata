@@ -1,17 +1,17 @@
 set xlabel "Number of threads"
-set xlabel offset 0,0.5
+set xlabel offset 0,0.3
 
 set ylabel "Throughput (tps)"
-set ylabel offset -0.3,0
+set ylabel offset -2.5,0
 
-set xlabel font "Courier,12"
-set ylabel font "Courier,12"
-set tics   font "Courier,12"
-set key    font "Courier,12"
+set xlabel font "Courier,17"
+set ylabel font "Courier,17"
+set tics   font "Courier,17"
+set key    font "Courier,17"
 set key spacing 1.5
 
-set lmargin 10
-set bmargin 3
+set lmargin 12
+set bmargin 4
 
 set key horiz outside center top box
 

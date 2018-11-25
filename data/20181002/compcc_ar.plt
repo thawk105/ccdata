@@ -1,19 +1,19 @@
 set xlabel "Number of threads"
 set ylabel "Abort Rate"
 
-set xlabel font "Courier,12"
-set ylabel font "Courier,12"
-set tics   font "Courier,12"
-set key    font "Courier,12"
+set xlabel font "Courier,17"
+set ylabel font "Courier,17"
+set tics   font "Courier,17"
+set key    font "Courier,17"
 set key spacing 1.5
 
 set format y"%1.1f"
 set yrange [0:1]
 
-set lmargin 8 
-set bmargin 3
-set xlabel offset 0,0.5
-set ylabel offset -0.5,0
+set lmargin 12 
+set bmargin 4
+set xlabel offset 0,0.3
+set ylabel offset -2.5,0
 
 set key horiz outside center top box
 

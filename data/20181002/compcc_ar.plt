@@ -17,7 +17,6 @@ set ylabel offset -2.5,0
 
 set key horiz outside center top box
 
-unset key
 
 set grid
 

@@ -40,9 +40,7 @@ f(a) = a / 1e6
 
 
 set terminal pdfcairo enhanced color size 12cm,6cm
-set output "comp_ermia_tuple100-10m_ycsbA.pdf"
+set output "comp_mocc_tuple100-10m_ycsbA.pdf"
 plot \
-"result_ermia_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "ERMIA' (throughput)", \
-"result_ermia_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 1 title "ERMIA' (abort rate)", \
-"result_ermia-serial_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 2 title "ERMIA (throughput)", \
-"result_ermia-serial_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 2 title "ERMIA (abort rate)", \
+"result_mocc_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "MOCC (throughput)", \
+"result_mocc_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 1 title "MOCC (abort rate)"

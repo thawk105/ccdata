@@ -16,7 +16,7 @@ set bmargin 4
 set key horiz outside center top box
 
 #set format y "%2.0t{/Symbol \264}10^{%T}"
-set format y "%1.1f"
+set format y "%1.2f"
 set notitle
 
 #set ytics 0,0.5
@@ -35,10 +35,18 @@ set output "comp_cicada_silo_ermia_ss2pl_mocc_tictoc_tuple500k_ycsbA_ar.pdf"
 plot "result_cicada_ycsbA_tuple500k_ar.dat" w errorlines title "Cicada", "result_silo_ycsbA_tuple500k_ar.dat" w errorlines title "Silo", "result_ermia_ycsbA_tuple500k_ar.dat" w errorlines title "ERMIA'", "result_ermia-serial_ycsbA_tuple500k_ar.dat" w errorlines title "ERMIA", "result_ss2pl_ycsbA_tuple500k_ar.dat" w errorlines pt 6 title "SS2PL", "result_MOCC_ycsbA_tuple500k_ar.dat" w errorlines pt 8 title "MOCC", "result_tictoc_ycsbA_tuple500k_ar.dat" w errorlines pt 10 title "TicToc", "result_si_ycsbA_tuple500k_ar.dat" w errorlines pt 12 title "SI", 
 
 set terminal pdfcairo enhanced color size 6cm,6cm
+set output "comp_cicada_silo_ermia_ss2pl_mocc_tictoc_tuple5m_ycsbA_ar.pdf"
+plot "result_cicada_ycsbA_tuple5m_ar.dat" w errorlines title "Cicada", "result_silo_ycsbA_tuple5m_ar.dat" w errorlines title "Silo", "result_ermia_ycsbA_tuple5m_ar.dat" w errorlines title "ERMIA'", "result_ermia-serial_ycsbA_tuple5m_ar.dat" w errorlines title "ERMIA", "result_ss2pl_ycsbA_tuple5m_ar.dat" w errorlines pt 6 title "SS2PL", "result_MOCC_ycsbA_tuple5m_ar.dat" w errorlines pt 8 title "MOCC", "result_tictoc_ycsbA_tuple5m_ar.dat" w errorlines pt 10 title "TicToc", "result_si_ycsbA_tuple5m_ar.dat" w errorlines pt 12 title "SI", 
+
+set terminal pdfcairo enhanced color size 6cm,6cm
 set output "comp_cicada_silo_ermia_ss2pl_mocc_tictoc_tuple500_ycsbB_ar.pdf"
 plot "result_cicada_ycsbB_tuple500_ar.dat" w errorlines title "Cicada", "result_silo_ycsbB_tuple500_ar.dat" w errorlines title "Silo", "result_ermia_ycsbB_tuple500_ar.dat" w errorlines title "ERMIA'", "result_ermia-serial_ycsbB_tuple500_ar.dat" w errorlines title "ERMIA", "result_ss2pl_ycsbB_tuple500_ar.dat" w errorlines pt 6 title "SS2PL", "result_MOCC_ycsbB_tuple500_ar.dat" w errorlines pt 8 title "MOCC", "result_tictoc_ycsbB_tuple500_ar.dat" w errorlines pt 10 title "TicToc", "result_si_ycsbB_tuple500_ar.dat" w errorlines pt 12 title "SI", 
 
 set terminal pdfcairo enhanced color size 6cm,6cm
 set output "comp_cicada_silo_ermia_ss2pl_mocc_tictoc_tuple500k_ycsbB_ar.pdf"
 plot "result_cicada_ycsbB_tuple500k_ar.dat" w errorlines title "Cicada", "result_silo_ycsbB_tuple500k_ar.dat" w errorlines title "Silo", "result_ermia_ycsbB_tuple500k_ar.dat" w errorlines title "ERMIA'", "result_ermia-serial_ycsbB_tuple500k_ar.dat" w errorlines title "ERMIA", "result_ss2pl_ycsbB_tuple500k_ar.dat" w errorlines pt 6 title "SS2PL", "result_MOCC_ycsbB_tuple500k_ar.dat" w errorlines pt 8 title "MOCC", "result_tictoc_ycsbB_tuple500k_ar.dat" w errorlines pt 10 title "TicToc", "result_si_ycsbB_tuple500k_ar.dat" w errorlines pt 12 title "SI", 
+
+set terminal pdfcairo enhanced color size 6cm,6cm
+set output "comp_cicada_silo_ermia_ss2pl_mocc_tictoc_tuple5m_ycsbB_ar.pdf"
+plot "result_cicada_ycsbB_tuple5m_ar.dat" w errorlines title "Cicada", "result_silo_ycsbB_tuple5m_ar.dat" w errorlines title "Silo", "result_ermia_ycsbB_tuple5m_ar.dat" w errorlines title "ERMIA'", "result_ermia-serial_ycsbB_tuple5m_ar.dat" w errorlines title "ERMIA", "result_ss2pl_ycsbB_tuple5m_ar.dat" w errorlines pt 6 title "SS2PL", "result_MOCC_ycsbB_tuple5m_ar.dat" w errorlines pt 8 title "MOCC", "result_tictoc_ycsbB_tuple5m_ar.dat" w errorlines pt 10 title "TicToc", "result_si_ycsbB_tuple5m_ar.dat" w errorlines pt 12 title "SI", 
 

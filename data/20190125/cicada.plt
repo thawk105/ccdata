@@ -1,5 +1,3 @@
-set logscale x
-set xlabel "Database size"
 set xlabel font "Courier,17"
 set xlabel offset 0,0.3
 
@@ -35,13 +33,37 @@ set ytics autofreq
 set y2tics autofreq
 set grid
 
-f(a) = a / 1e6
-g(b) = b / 1e2
+a(b) = b / 1e6
+b(a) = a / 1e2
+
+##########
+
+set logscale x
+set xlabel "Database size"
 
 set title "Cicada"
 set terminal pdfcairo enhanced color size 12cm,6cm
 set output "comp_cicada_tuple100-10m_ycsbA.pdf"
 plot \
-"result_cicada_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "Throughput", \
+"result_cicada_ycsbA_tuple100-10m.dat" using 1:(a($2), a($3), a($4)) w errorlines pt 1 title "Throughput", \
 "result_cicada_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 1 title "Abort rate", \
-"result_cicada_ycsbA_tuple100-10m_cachemiss.dat" using 1:(g($2), g($3), g($4)) axis x1y2 w errorlines pt 1 title "Cache-miss rate", \
+"result_cicada_ycsbA_tuple100-10m_cachemiss.dat" using 1:(b($2), b($3), b($4)) axis x1y2 w errorlines pt 1 title "Cache-miss rate", \
+
+##########
+
+unset xrange
+unset y2tics
+unset y2label
+unset logscale x
+
+set format y "%1.1f"
+set xlabel "Thread number"
+
+first=system("cat result_cicada_ycsbA_tuple500.dat | awk 'NR==3 {print $2}'")
+c(a) = a * first
+set terminal pdfcairo enhanced color size 12cm,6cm
+set output "comp_cicada_tuple500_ycsbA.pdf"
+plot \
+"result_cicada_ycsbA_tuple500.dat" using 1:(a(c($1))) w errorlines pt 1 title "Ideal", \
+"result_cicada_ycsbA_tuple500.dat" using 1:(a($2), a($3), a($4)) w errorlines pt 2 title "Real", \
+

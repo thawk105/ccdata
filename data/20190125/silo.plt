@@ -27,7 +27,6 @@ set key horiz outside center top box
 #set format y "%2.0t{/Symbol \264}10^{%T}"
 set format y "%1.1f"
 set format y2 "%1.2f"
-set notitle
 
 #set ytics 0,0.5
 set autoscale y
@@ -37,10 +36,12 @@ set y2tics autofreq
 set grid
 
 f(a) = a / 1e6
+g(b) = b / 1e2
 
-
+set title "Silo"
 set terminal pdfcairo enhanced color size 12cm,6cm
 set output "comp_silo_tuple100-10m_ycsbA.pdf"
 plot \
-"result_silo_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "Silo (throughput)", \
-"result_silo_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 1 title "Silo (abort rate)"
+"result_silo_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "Throughput", \
+"result_silo_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 1 title "Abort rate", \
+"result_silo_ycsbA_tuple100-10m_cachemiss.dat" using 1:(g($2), g($3), g($4)) axis x1y2 w errorlines pt 1 title "Cache-miss rate", \

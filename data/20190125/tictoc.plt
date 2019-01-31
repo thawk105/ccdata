@@ -16,6 +16,7 @@ set y2range [0:1]
 
 set tics   font "Courier,17"
 set key    font "Courier,17"
+set title  font "Courier,17"
 set key spacing 1.5
 
 set lmargin 12
@@ -37,10 +38,12 @@ set y2tics autofreq
 set grid
 
 f(a) = a / 1e6
+g(b) = b / 1e2
 
-
+set title "TicToc"
 set terminal pdfcairo enhanced color size 12cm,6cm
 set output "comp_tictoc_tuple100-10m_ycsbA.pdf"
 plot \
-"result_tictoc_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "TicToc (throughput)", \
-"result_tictoc_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 1 title "TicToc (abort rate)"
+"result_tictoc_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "Throughput", \
+"result_tictoc_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 1 title "Abort rate", \
+"result_tictoc_ycsbA_tuple100-10m_cachemiss.dat" using 1:(g($2), g($3), g($4)) axis x1y2 w errorlines pt 1 title "Cache-miss rate", \

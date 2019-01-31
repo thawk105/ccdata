@@ -67,3 +67,27 @@ plot \
 "result_cicada_ycsbA_tuple500.dat" using 1:(a(c($1))) w errorlines pt 1 title "Ideal", \
 "result_cicada_ycsbA_tuple500.dat" using 1:(a($2), a($3), a($4)) w errorlines pt 2 title "Real", \
 
+##########
+
+set logscale x
+set logscale y
+set dgrid3d 10,10,10
+set hidden3d
+set isosample 100,100
+
+set xlabel "Database size [records]"
+set xlabel offset 0,-3
+set ylabel "GC interval [us]"
+set ylabel offset 0,-3
+set ytics offset 2,0
+set zlabel "Throughput [tps]"
+set zlabel offset -7,0
+unset key
+
+set rmargin 19
+
+set terminal pdfcairo enhanced color size 12cm,6cm
+set output "comp_cicada_tuple100-10m_gci1us-100ms_ycsbA.pdf"
+splot \
+"result_cicada_ycsbA_tuple100-10m_gci1us-100ms.dat" using 1:2:(a($3)) w lines, \
+

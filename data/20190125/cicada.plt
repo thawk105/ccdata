@@ -71,9 +71,12 @@ plot \
 
 set logscale x
 set logscale y
-set dgrid3d 10,10,10
+
+#set dgrid3d 30,30
+#set isosamples 30
 set hidden3d
-set isosample 100,100
+set pm3d
+set ticslevel 0
 
 set xlabel "Database size [records]"
 set xlabel offset 0,-3
@@ -89,5 +92,15 @@ set rmargin 19
 set terminal pdfcairo enhanced color size 12cm,6cm
 set output "comp_cicada_tuple100-10m_gci1us-100ms_ycsbA.pdf"
 splot \
-"result_cicada_ycsbA_tuple100-10m_gci1us-100ms.dat" using 1:2:(a($3)) w lines, \
+"result_cicada_ycsbA_tuple100-10m_gci1us-100ms.dat" using 1:2:(a($3)) w linespoints, \
+
+##########
+
+set view 30,70,1,1
+set format z "%1.2f"
+set zlabel "Abort rate"
+set terminal pdfcairo enhanced color size 12cm,6cm
+set output "comp_cicada_tuple100-10m_gci1us-100ms_ycsbA_ar.pdf"
+splot \
+"result_cicada_ycsbA_tuple100-10m_gci1us-100ms_ar.dat" using 1:2:3 w linespoints, \
 

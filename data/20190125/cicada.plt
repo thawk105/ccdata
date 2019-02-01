@@ -72,19 +72,20 @@ plot \
 set logscale x
 set logscale y
 
-#set dgrid3d 30,30
-#set isosamples 30
 set hidden3d
 set pm3d
 set ticslevel 0
 
 set xlabel "Database size [records]"
 set xlabel offset 0,-3
+set xtics offset 0,-1
 set ylabel "GC interval [us]"
 set ylabel offset 0,-3
 set ytics offset 2,0
 set zlabel "Throughput [tps]"
 set zlabel offset -7,0
+set ztics 0,2
+set cbtics 0,2
 unset key
 
 set rmargin 19
@@ -96,11 +97,21 @@ splot \
 
 ##########
 
-set view 30,70,1,1
 set format z "%1.2f"
 set zlabel "Abort rate"
+set ztics 0,0.2
+set cbtics 0,0.2
 set terminal pdfcairo enhanced color size 12cm,6cm
 set output "comp_cicada_tuple100-10m_gci1us-100ms_ycsbA_ar.pdf"
 splot \
 "result_cicada_ycsbA_tuple100-10m_gci1us-100ms_ar.dat" using 1:2:3 w linespoints, \
+
+##########
+
+set format z "%1.2f"
+set zlabel "Cache-miss rate"
+set terminal pdfcairo enhanced color size 12cm,6cm
+set output "comp_cicada_tuple100-10m_gci1us-100ms_ycsbA_cache-miss.pdf"
+splot \
+"result_cicada_ycsbA_tuple100-10m_gci1us-100ms_cache-miss.dat" using 1:2:(b($3)) w linespoints, \
 

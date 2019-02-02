@@ -35,16 +35,63 @@ set ytics autofreq
 set y2tics autofreq
 set grid
 
-f(a) = a / 1e6
-g(b) = b / 1e2
+a(b) = b / 1e6
+b(a) = a / 1e2
 
 set title "ERMIA"
 set terminal pdfcairo enhanced color size 12cm,6cm
 set output "comp_ermia_tuple100-10m_ycsbA.pdf"
 plot \
-"result_ermia_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "ERMIA' (throughput)", \
+"result_ermia_ycsbA_tuple100-10m.dat" using 1:(a($2), a($3), a($4)) w errorlines pt 1 title "ERMIA' (throughput)", \
 "result_ermia_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 1 title "ERMIA' (abort rate)", \
-"result_ermia_ycsbA_tuple100-10m_cachemiss.dat" using 1:(g($2), g($3), g($4)) axis x1y2 w errorlines pt 1 title "ERMIA' (cache-miss rate)", \
-"result_ermia-serial_ycsbA_tuple100-10m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 2 title "ERMIA (throughput)", \
+"result_ermia_ycsbA_tuple100-10m_cachemiss.dat" using 1:(b($2), b($3), b($4)) axis x1y2 w errorlines pt 1 title "ERMIA' (cache-miss rate)", \
+"result_ermia-serial_ycsbA_tuple100-10m.dat" using 1:(a($2), a($3), a($4)) w errorlines pt 2 title "ERMIA (throughput)", \
 "result_ermia-serial_ycsbA_tuple100-10m_ar.dat" axis x1y2 w errorlines pt 2 title "ERMIA (abort rate)", \
-"result_ermia-serial_ycsbA_tuple100-10m_cachemiss.dat" using 1:(g($2), g($3), g($4)) axis x1y2 w errorlines pt 2 title "ERMIA (cache-miss rate)", \
+"result_ermia-serial_ycsbA_tuple100-10m_cachemiss.dat" using 1:(b($2), b($3), b($4)) axis x1y2 w errorlines pt 2 title "ERMIA (cache-miss rate)", \
+
+##########
+
+set logscale x
+set logscale y
+
+set hidden3d
+set pm3d
+set ticslevel 0
+
+set xlabel "Database size [records]"
+set xlabel offset 0,-3
+set xtics offset 0,-1
+set ylabel "GC interval [us]"
+set ylabel offset 3,-3
+set ytics offset 2,0
+set zlabel "Throughput [tps]"
+set zlabel offset -7,0
+set ztics 0,2
+set colorbox user origin 0.9,0.6 size 0.02,0.3
+set cbtics 0,0.5
+unset key
+
+set terminal pdfcairo enhanced color size 12cm,6cm
+set output "comp_ermia_tuple100-10m_gci1us-100ms_ycsbA.pdf"
+splot \
+"result_ermia_ycsbA_tuple100-10m_gci1us-100ms.dat" using 1:2:(a($3)) w linespoints, \
+
+##########
+
+set zlabel "Abort rate"
+set ztics 0,0.2
+
+set terminal pdfcairo enhanced color size 12cm,6cm
+set output "comp_ermia_tuple100-10m_gci1us-100ms_ycsbA_ar.pdf"
+splot \
+"result_ermia_ycsbA_tuple100-10m_gci1us-100ms_ar.dat" using 1:2:3 w linespoints, \
+
+##########
+
+set zlabel "Cache-miss rate"
+
+set terminal pdfcairo enhanced color size 12cm,6cm
+set output "comp_ermia_tuple100-10m_gci1us-100ms_ycsbA_cache-miss.pdf"
+splot \
+"result_ermia_ycsbA_tuple100-10m_gci1us-100ms_cache-miss.dat" using 1:2:(b($3)) w linespoints, \
+

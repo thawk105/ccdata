@@ -1,0 +1,28 @@
+アーキテクチャ:                      x86_64
+CPU 操作モード:                      32-bit, 64-bit
+バイト順序:                          Little Endian
+CPU:                                 224
+オンラインになっている CPU のリスト: 0-223
+コアあたりのスレッド数:              2
+ソケットあたりのコア数:              28
+ソケット数:                          4
+NUMA ノード数:                       4
+ベンダー ID:                         GenuineIntel
+CPU ファミリー:                      6
+モデル:                              85
+モデル名:                            Intel(R) Xeon(R) Platinum 8176 CPU @ 2.10GHz
+ステッピング:                        4
+CPU MHz:                             999.974
+CPU 最大 MHz:                        3800.0000
+CPU 最小 MHz:                        1000.0000
+BogoMIPS:                            4200.00
+仮想化:                              VT-x
+L1d キャッシュ:                      32K
+L1i キャッシュ:                      32K
+L2 キャッシュ:                       1024K
+L3 キャッシュ:                       39424K
+NUMA ノード 0 CPU:                   0-27,112-139
+NUMA ノード 1 CPU:                   28-55,140-167
+NUMA ノード 2 CPU:                   56-83,168-195
+NUMA ノード 3 CPU:                   84-111,196-223
+フラグ:                              fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke flush_l1d

@@ -50,14 +50,43 @@ plot \
 "result_cicada_ycsbA_tuple100-10m_cachemiss.dat" using 1:(b($2), b($3), b($4)) axis x1y2 w errorlines pt 1 title "Cache-miss rate", \
 
 ##########
+set xlabel "GC interval [usec]"
+set ylabel "Throughput [tps]"
+unset y2label
+unset y2tics
+
+set ytics 0,1
+set output "comp_cicada_tuple100-10m_gci1us-100ms_ycsbA_2d.pdf"
+plot \
+"result_cicada_ycsbA_tuple100_gci1us-100ms.dat" using 2:(a($3), a($4), a($5)) w errorlines pt 1 title "rec 100", \
+"result_cicada_ycsbA_tuple1k_gci1us-100ms.dat" using 2:(a($3), a($4), a($5)) w errorlines pt 2 title "rec 1k", \
+"result_cicada_ycsbA_tuple10k_gci1us-100ms.dat" using 2:(a($3), a($4), a($5)) w errorlines pt 3 title "rec 10k", \
+"result_cicada_ycsbA_tuple100k_gci1us-100ms.dat" using 2:(a($3), a($4), a($5)) w errorlines pt 4 title "rec 100k", \
+"result_cicada_ycsbA_tuple1m_gci1us-100ms.dat" using 2:(a($3), a($4), a($5)) w errorlines pt 5 title "rec 1m", \
+"result_cicada_ycsbA_tuple10m_gci1us-100ms.dat" using 2:(a($3), a($4), a($5)) w errorlines pt 6 title "rec 10m", \
+
+set ylabel "Cache-miss rate"
+set ytics 0,0.1
+set output "comp_cicada_tuple100-10m_gci1us-100ms_ycsbA_2d_cache-miss.pdf"
+plot \
+"result_cicada_ycsbA_tuple100_gci1us-100ms_cache-miss.dat" using 2:(b($3), b($4), b($5)) w errorlines pt 1 title "rec 100", \
+"result_cicada_ycsbA_tuple1k_gci1us-100ms_cache-miss.dat" using 2:(b($3), b($4), b($5)) w errorlines pt 2 title "rec 1k", \
+"result_cicada_ycsbA_tuple10k_gci1us-100ms_cache-miss.dat" using 2:(b($3), b($4), b($5)) w errorlines pt 3 title "rec 10k", \
+"result_cicada_ycsbA_tuple100k_gci1us-100ms_cache-miss.dat" using 2:(b($3), b($4), b($5)) w errorlines pt 4 title "rec 100k", \
+"result_cicada_ycsbA_tuple1m_gci1us-100ms_cache-miss.dat" using 2:(b($3), b($4), b($5)) w errorlines pt 5 title "rec 1m", \
+"result_cicada_ycsbA_tuple10m_gci1us-100ms_cache-miss.dat" using 2:(b($3), b($4), b($5)) w errorlines pt 6 title "rec 10m", \
+
+##########
 
 unset xrange
 unset y2tics
 unset y2label
 unset logscale x
+set ytics 0,2
 
 set format y "%1.1f"
 set xlabel "Thread number"
+set ylabel "Throughput [tps]"
 
 first=system("cat result_cicada_ycsbA_tuple500.dat | awk 'NR==3 {print $2}'")
 c(a) = a * first
@@ -67,10 +96,19 @@ plot \
 "result_cicada_ycsbA_tuple500.dat" using 1:(a(c($1))) w errorlines pt 1 title "Ideal", \
 "result_cicada_ycsbA_tuple500.dat" using 1:(a($2), a($3), a($4)) w errorlines pt 2 title "Real", \
 
+first=system("cat result_cicada_ycsbC_tuple500.dat | awk 'NR==3 {print $2}'")
+c(a) = a * first
+set terminal pdfcairo enhanced color size 12cm,6cm
+set output "comp_cicada_tuple500_ycsbC.pdf"
+plot \
+"result_cicada_ycsbC_tuple500.dat" using 1:(a(c($1))) w errorlines pt 1 title "Ideal", \
+"result_cicada_ycsbC_tuple500.dat" using 1:(a($2), a($3), a($4)) w errorlines pt 2 title "Real", \
+
 ##########
 
 set logscale x
 set logscale y
+set ytics autofreq
 
 set hidden3d
 set pm3d

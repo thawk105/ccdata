@@ -28,7 +28,15 @@ f(a) = a / 1e6
 
 set terminal pdfcairo enhanced color size 6cm,6cm
 set output "comp_cicada_silo_ermia_ss2pl_mocc_tictoc_tuple500_ycsbA.pdf"
-plot "result_cicada_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", "result_silo_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", "result_ermia_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "ERMIA'", "result_ermia-serial_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "ERMIA", "result_ss2pl_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 6 title "SS2PL", "result_mocc_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "MOCC", "result_tictoc_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "TicToc", "result_si_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 12 title "SI"
+plot \
+"result_cicada_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
+"result_silo_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
+"result_ermia_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "ERMIA'", \
+"result_ermia-serial_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "ERMIA", \
+"result_ss2pl_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 6 title "SS2PL", \
+"result_mocc_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "MOCC", \
+"result_tictoc_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "TicToc", \
+"result_si_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 12 title "SI"
 
 set terminal pdfcairo enhanced color size 6cm,6cm
 set output "comp_cicada_silo_ermia_ss2pl_mocc_tictoc_tuple500k_ycsbA.pdf"

@@ -29,7 +29,7 @@ f(a) = a / 1e6
 set title "Throughput"
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple10k_key50-val2k_numaia_ycsbA.pdf"
+set output "comp_tuple10k_ycsbA.pdf"
 plot \
  "result_cicada_ycsbA_tuple10k_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple10k_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -40,7 +40,7 @@ plot \
  "result_si_ycsbA_tuple10k_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple1m_key50-val2k_numaia_ycsbA.pdf"
+set output "comp_tuple1m_ycsbA.pdf"
 plot \
  "result_cicada_ycsbA_tuple1m_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple1m_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -51,7 +51,7 @@ plot \
  "result_si_ycsbA_tuple1m_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple10k_key50-val2k_numaia_ycsbB.pdf"
+set output "comp_tuple10k_ycsbB.pdf"
 plot \
  "result_cicada_ycsbB_tuple10k_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple10k_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -62,7 +62,7 @@ plot \
  "result_si_ycsbB_tuple10k_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple1m_key50-val2k_numaia_ycsbB.pdf"
+set output "comp_tuple1m_ycsbB.pdf"
 plot \
  "result_cicada_ycsbB_tuple1m_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple1m_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -73,7 +73,7 @@ plot \
  "result_si_ycsbB_tuple1m_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple10k_key50-val2k_numaia_ycsbC.pdf"
+set output "comp_tuple10k_ycsbC.pdf"
 plot \
  "result_cicada_ycsbC_tuple10k_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple10k_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -84,7 +84,7 @@ plot \
  "result_si_ycsbC_tuple10k_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple1m_key50-val2k_numaia_ycsbC.pdf"
+set output "comp_tuple1m_ycsbC.pdf"
 plot \
  "result_cicada_ycsbC_tuple1m_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple1m_key50-val2k_numaia.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \

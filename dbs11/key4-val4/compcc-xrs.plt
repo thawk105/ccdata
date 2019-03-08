@@ -26,7 +26,7 @@ set ylabel offset -2.5,0
 set ytics autofreq
 
 set terminal pdfcairo enhanced color size 12cm,12cm
-set output "comp_cicada_silo_ermia_ss2pl_mocc_tictoc_tuple100-10m_ycsbB.pdf"
+set output "comp_tuple100-10m_ycsbB.pdf"
 set multiplot
 
 set tmargin screen 0.9

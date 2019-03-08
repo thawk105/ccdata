@@ -29,7 +29,7 @@ f(a) = a / 1e6
 set title "AbortRate"
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple10k_key50-val2k_numaia_ycsbA_ar.pdf
+set output "comp_tuple10k_ycsbA_ar.pdf
 plot \
 "result_cicada_ycsbA_tuple10k_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Cicada", \
 "result_silo_ycsbA_tuple10k_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Silo", \
@@ -40,7 +40,7 @@ plot \
 "result_si_ycsbA_tuple10k_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines pt 10 title "SI", \
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple10k_key50-val2k_numaia_ycsbB_ar.pdf
+set output "comp_tuple10k_ycsbB_ar.pdf
 plot \
 "result_cicada_ycsbB_tuple10k_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Cicada", \
 "result_silo_ycsbB_tuple10k_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Silo", \
@@ -51,7 +51,7 @@ plot \
 "result_si_ycsbB_tuple10k_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines pt 10 title "SI", \
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple10k_key50-val2k_numaia_ycsbC_ar.pdf
+set output "comp_tuple10k_ycsbC_ar.pdf
 plot \
 "result_cicada_ycsbC_tuple10k_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Cicada", \
 "result_silo_ycsbC_tuple10k_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Silo", \
@@ -62,7 +62,7 @@ plot \
 "result_si_ycsbC_tuple10k_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines pt 10 title "SI", \
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple1m_key50-val2k_numaia_ycsbA_ar.pdf
+set output "comp_tuple1m_ycsbA_ar.pdf
 plot \
 "result_cicada_ycsbA_tuple1m_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Cicada", \
 "result_silo_ycsbA_tuple1m_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Silo", \
@@ -73,7 +73,7 @@ plot \
 "result_si_ycsbA_tuple1m_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines pt 10 title "SI", \
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple1m_key50-val2k_numaia_ycsbB_ar.pdf
+set output "comp_tuple1m_ycsbB_ar.pdf
 plot \
 "result_cicada_ycsbB_tuple1m_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Cicada", \
 "result_silo_ycsbB_tuple1m_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Silo", \
@@ -84,7 +84,7 @@ plot \
 "result_si_ycsbB_tuple1m_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines pt 10 title "SI", \
 
 set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple1m_key50-val2k_numaia_ycsbC_ar.pdf
+set output "comp_tuple1m_ycsbC_ar.pdf
 plot \
 "result_cicada_ycsbC_tuple1m_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Cicada", \
 "result_silo_ycsbC_tuple1m_key50-val2k_numaia.dat" using 1:($5, $6, $7) w errorlines title "Silo", \

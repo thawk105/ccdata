@@ -1,0 +1,7 @@
+#tuple num, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss
+#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../silo.exe  10 thread 50 off 0.99 on 2400 40 3
+100 12870 12420 13172 0.9543 0.9532 0.9550, 41 41.678 42.059
+1000 25180 24669 25456 0.9315 0.9311 0.9319, 38 38.031 38.559
+10000 41321 40014 42744 0.9015 0.8972 0.9045, 36 35.811 36.294
+100000 63037 60516 66014 0.8703 0.8694 0.8709, 33 32.494 34.236
+1000000 88981 85973 93077 0.8336 0.8331 0.8343, 32 32.011 32.822

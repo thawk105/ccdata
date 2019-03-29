@@ -8,12 +8,12 @@ set xlabel font "Courier,17"
 set ylabel font "Courier,17"
 set tics   font "Courier,17"
 set key    font "Courier,17"
-set key spacing 1.5
+set key spacing 1
 
 set lmargin 12
 set bmargin 4
 
-set key horiz outside center top box
+set key horiz outside center top box width 10 height 0.7 
 
 #set format y "%2.0t{/Symbol \264}10^{%T}"
 set format y "%1.1f"
@@ -26,8 +26,8 @@ set grid
 
 f(a) = a / 1e6
 
-set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple500_ycsbA.pdf"
+set terminal pngcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbA.png"
 plot \
  "result_cicada_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -37,8 +37,8 @@ plot \
  "result_tictoc_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple500k_ycsbA.pdf"
+set terminal pngcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbA.png"
 plot \
  "result_cicada_ycsbA_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -48,8 +48,8 @@ plot \
  "result_tictoc_ycsbA_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple5m_ycsbA.pdf"
+set terminal pngcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbA.png"
 plot \
  "result_cicada_ycsbA_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -59,8 +59,8 @@ plot \
  "result_tictoc_ycsbA_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple500_ycsbB.pdf"
+set terminal pngcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbB.png"
 plot \
  "result_cicada_ycsbB_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -70,8 +70,8 @@ plot \
  "result_tictoc_ycsbB_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple500k_ycsbB.pdf"
+set terminal pngcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbB.png"
 plot \
  "result_cicada_ycsbB_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -81,8 +81,8 @@ plot \
  "result_tictoc_ycsbB_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple5m_ycsbB.pdf"
+set terminal pngcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbB.png"
 plot \
  "result_cicada_ycsbB_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -92,8 +92,8 @@ plot \
  "result_tictoc_ycsbB_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple500_ycsbC.pdf"
+set terminal pngcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbC.png"
 plot \
  "result_cicada_ycsbC_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -103,8 +103,8 @@ plot \
  "result_tictoc_ycsbC_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbC_tuple500.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple500k_ycsbC.pdf"
+set terminal pngcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbC.png"
 plot \
  "result_cicada_ycsbC_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -114,8 +114,8 @@ plot \
  "result_tictoc_ycsbC_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbC_tuple500k.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pdfcairo enhanced color size 8cm,8cm
-set output "comp_tuple5m_ycsbC.pdf"
+set terminal pngcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbC.png"
 plot \
  "result_cicada_ycsbC_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple5m.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \

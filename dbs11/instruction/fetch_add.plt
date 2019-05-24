@@ -21,7 +21,7 @@ set notitle
 set ytics autofreq
 set grid
 
-f(a) = a / 1e6
+f(a) = a / 1e2
 
 set logscale y
 set format y "%2.0t{/Symbol \264}10^{%T}"
@@ -31,7 +31,8 @@ plot \
  "fetch_add.dat" using 1:2 w lp title "fetch\\_add", \
 
 unset logscale y
-set format y "%1.0f"
+set format y "%1.2f"
+set ylabel "cache-miss rate"
 set output "fetch_add_cm.png"
 plot \
- "fetch_add.dat" using 1:3 w lp title "fetch\\_add", \
+ "fetch_add.dat" using 1:(f($3)) w lp title "fetch\\_add", \

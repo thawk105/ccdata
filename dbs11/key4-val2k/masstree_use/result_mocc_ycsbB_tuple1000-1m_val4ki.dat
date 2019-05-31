@@ -1,0 +1,6 @@
+#worker threads, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss
+#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../mocc.exe tuple 10 224 95 off 0 on 2400 40 3
+1000 4586449 4557009 4607729 0.3160 0.3158 0.3163, 43 43.268 43.858
+10000 13246170 13202981 13286209 0.0455 0.0455 0.0456, 15 15.557 15.793
+100000 4747732 4732787 4761982 0.0052 0.0052 0.0052, 67 67.363 67.611
+1000000 1281745 1262206 1305657 0.0005 0.0005 0.0005, 79 79.385 79.505

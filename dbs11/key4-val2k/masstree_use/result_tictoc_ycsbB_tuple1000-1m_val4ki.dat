@@ -1,0 +1,6 @@
+#worker threads, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss
+#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../tictoc.exe tuple 10 224 95 off 0 on 2400 3
+1000 10328178 10310707 10337488 0.3858 0.3839 0.3878, 21 21.501 21.749
+10000 11604644 11572034 11667268 0.0507 0.0505 0.0510, 19 18.960 19.123
+100000 4612110 4596923 4624865 0.0037 0.0037 0.0038, 68 68.022 68.052
+1000000 774116 767833 779034 0.0028 0.0020 0.0036, 78 77.982 78.078

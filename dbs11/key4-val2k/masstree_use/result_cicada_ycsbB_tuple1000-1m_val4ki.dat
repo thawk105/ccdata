@@ -1,0 +1,6 @@
+#tuple num, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss
+#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../cicada.exe tuple 10 224 95 off 0 on off off 2400 5 2 10 3
+1000 9773521 9643460 9975478 0.1877 0.1874 0.1881 20 20.021 20.161
+10000 9961075 9861117 10112668 0.0183 0.0183 0.0184 25 25.595 26.104
+100000 4471548 4460990 4488297 0.0019 0.0019 0.0020 72 72.507 72.683
+1000000 647883 644613 652378 0.0005 0.0005 0.0005 76 76.300 76.606

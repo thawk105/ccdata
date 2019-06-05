@@ -1,3 +1,4 @@
+reset
 set tics   font "Courier,12"
 
 set key    font "Courier,12"

@@ -1,0 +1,11 @@
+#Worker threads, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss
+#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../ss2pl.exe 1000000000 10 thread 100 off 0.9 on 2400 3
+0    0.0000  , 21 19.716 24.458
+27    0.0000  , 12 11.169 14.828
+55    0.0000  , 13 12.783 13.951
+83    0.0000  , 11 8.441 15.345
+111    0.0000  , 11 9.926 13.094
+139    0.0000  , 9 9.698 10.435
+167    0.0000  , 11 9.392 14.360
+195    0.0000  , 11 8.020 13.727
+223    0.0000  , 11 11.104 12.323

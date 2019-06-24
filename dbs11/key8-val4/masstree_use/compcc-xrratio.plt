@@ -16,6 +16,7 @@ set terminal pngcairo enhanced color size 20cm,20cm
 set format y "%g"
 set ylabel "Throughput (M tps)"
 set autoscale y
+set yrange [0:50]
 set output "comp_tuple1m_rratio10-90_tps.png"
 plot \
 "result_silo_tuple1m_rratio10-90.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "Silo", \
@@ -46,6 +47,7 @@ set format y "%g"
 unset yrange
 set ylabel "Throughput (M tps)"
 set autoscale y
+set yrange [0:20]
 set output "comp_tuple100m_rratio10-90_tps.png"
 plot \
 "result_silo_tuple100m_rratio10-90.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 1 title "Silo", \

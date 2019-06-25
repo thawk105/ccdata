@@ -45,6 +45,13 @@ plot \
 "result_ss2pl-dlr1_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc", \
 
+set ylabel "Extra reads (/sec)"
+set autoscale y
+set output "comp_ycsbA_tuple100m_skew09_val4-1k_er.png"
+plot \
+"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:11 w errorlines pt 6 title "Silo", \
+"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:11 w errorlines pt 10 title "TicToc", \
+
 set ylabel "Abort Rate"
 set format y "%1.2f"
 unset logscale y
@@ -69,4 +76,12 @@ plot \
 "result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo", \
 "result_ss2pl-dlr1_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
+
+set ylabel "Phase rate"
+set output "comp_ycsbA_tuple100m_skew09_val4-1k_pr.png"
+plot \
+"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 6 title "Silo-read pahse", \
+"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 10 title "TicToc-read phase", \
+"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 6 title "Silo-validation phase", \
+"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 10 title "TicToc-validation phase", \
 

@@ -8,14 +8,15 @@ set key outside horiz center top box
 #set format x "%1.0t{/Symbol \264}10^{%T}"
 set xlabel "read ratio (%/100%)"
 
+set grid
 
 set xrange [0:90]
 
-set terminal pngcairo enhanced color size 20cm,20cm
+set terminal pdfcairo enhanced color size 20cm,20cm
 set format y "%1.0t{/Symbol \264}10^{%T}"
 unset yrange
 set ylabel "Throughput (tps)"
-set output "comp_tuple1k_val1k_skew09_rratio0-90_tps.png"
+set output "comp_tuple1k_val1k_skew09_rratio0-90_tps.pdf"
 plot \
 "result_cicada_tuple1k_val1k_skew09_rratio0-100.dat" using 1:2:3:4 w errorlines pt 1 title "Cicada", \
 "result_ermia_tuple1k_val1k_skew09_rratio0-100.dat" using 1:2:3:4 w errorlines pt 2 title "ERMIA'", \
@@ -30,7 +31,7 @@ set ylabel "Abort Rate"
 set format y "%1.2f"
 set yrange [0:1]
 
-set output "comp_tuple1k_val1k_skew09_rratio0-90_ar.png"
+set output "comp_tuple1k_val1k_skew09_rratio0-90_ar.pdf"
 plot \
 "result_cicada_tuple1k_val1k_skew09_rratio0-100.dat" using 1:5:6:7 w errorlines pt 1 title "Cicada", \
 "result_ermia_tuple1k_val1k_skew09_rratio0-100.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA'", \
@@ -43,7 +44,7 @@ plot \
 set xtics
 set ylabel "Cache-miss rate"
 
-set output "comp_tuple1k_val1k_skew09_rratio0-90_ca.png"
+set output "comp_tuple1k_val1k_skew09_rratio0-90_ca.pdf"
 plot \
 "result_cicada_tuple1k_val1k_skew09_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada", \
 "result_ermia_tuple1k_val1k_skew09_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA'", \
@@ -53,11 +54,11 @@ plot \
 "result_ss2pl-dlr1_tuple1k_val1k_skew09_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
 "result_tictoc_tuple1k_val1k_skew09_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
 
-set terminal pngcairo enhanced color size 20cm,20cm
+set terminal pdfcairo enhanced color size 20cm,20cm
 set format y "%1.0t{/Symbol \264}10^{%T}"
 unset yrange
 set ylabel "Throughput (tps)"
-set output "comp_tuple1m_val1k_skew09_rratio0-90_tps.png"
+set output "comp_tuple1m_val1k_skew09_rratio0-90_tps.pdf"
 plot \
 "result_cicada_tuple1m_val1k_skew09_rratio0-100.dat" using 1:2:3:4 w errorlines pt 1 title "Cicada", \
 "result_ermia_tuple1m_val1k_skew09_rratio0-100.dat" using 1:2:3:4 w errorlines pt 2 title "ERMIA'", \
@@ -72,7 +73,7 @@ set ylabel "Abort Rate"
 set format y "%1.2f"
 set yrange [0:1]
 
-set output "comp_tuple1m_val1k_skew09_rratio0-90_ar.png"
+set output "comp_tuple1m_val1k_skew09_rratio0-90_ar.pdf"
 plot \
 "result_cicada_tuple1m_val1k_skew09_rratio0-100.dat" using 1:5:6:7 w errorlines pt 1 title "Cicada", \
 "result_ermia_tuple1m_val1k_skew09_rratio0-100.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA'", \
@@ -85,7 +86,7 @@ plot \
 set xtics
 set ylabel "Cache-miss rate"
 
-set output "comp_tuple1m_val1k_skew09_rratio0-90_ca.png"
+set output "comp_tuple1m_val1k_skew09_rratio0-90_ca.pdf"
 plot \
 "result_cicada_tuple1m_val1k_skew09_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada", \
 "result_ermia_tuple1m_val1k_skew09_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA'", \

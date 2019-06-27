@@ -27,8 +27,8 @@ set grid
 
 f(a) = a / 1e6
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500_ycsbA_masstree.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbA_masstree.pdf"
 plot \
  "result_cicada_ycsbA_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -38,8 +38,8 @@ plot \
  "result_tictoc_ycsbA_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500k_ycsbA_masstree.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbA_masstree.pdf"
 plot \
  "result_cicada_ycsbA_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -49,8 +49,8 @@ plot \
  "result_tictoc_ycsbA_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple5m_ycsbA_masstree.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbA_masstree.pdf"
 plot \
  "result_cicada_ycsbA_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -60,8 +60,8 @@ plot \
  "result_tictoc_ycsbA_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500_ycsbB_masstree.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbB_masstree.pdf"
 plot \
  "result_cicada_ycsbB_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -71,8 +71,8 @@ plot \
  "result_tictoc_ycsbB_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500k_ycsbB_masstree.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbB_masstree.pdf"
 plot \
  "result_cicada_ycsbB_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -82,8 +82,8 @@ plot \
  "result_tictoc_ycsbB_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple5m_ycsbB_masstree.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbB_masstree.pdf"
 plot \
  "result_cicada_ycsbB_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -93,8 +93,8 @@ plot \
  "result_tictoc_ycsbB_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500_ycsbC_masstree.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbC_masstree.pdf"
 plot \
  "result_cicada_ycsbC_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -104,8 +104,8 @@ plot \
  "result_tictoc_ycsbC_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbC_tuple500_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500k_ycsbC_masstree.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbC_masstree.pdf"
 plot \
  "result_cicada_ycsbC_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -115,8 +115,8 @@ plot \
  "result_tictoc_ycsbC_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 8 title "TicToc", \
  "result_si_ycsbC_tuple500k_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple5m_ycsbC_masstree.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbC_masstree.pdf"
 plot \
  "result_cicada_ycsbC_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines title "Silo", \
@@ -129,8 +129,8 @@ plot \
 set yrange [0:1]
 set ylabel "Abort rate"
 set format y "%.1f"
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500_ycsbA_masstree_ar.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbA_masstree_ar.pdf"
 plot \
  "result_cicada_ycsbA_tuple500_masstree.dat" using 1:5:6:7 w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple500_masstree.dat" using 1:5:6:7 w errorlines title "Silo", \
@@ -140,8 +140,8 @@ plot \
  "result_tictoc_ycsbA_tuple500_masstree.dat" using 1:5:6:7 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple500_masstree.dat" using 1:5:6:7 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500k_ycsbA_masstree_ar.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbA_masstree_ar.pdf"
 plot \
  "result_cicada_ycsbA_tuple500k_masstree.dat" using 1:5:6:7 w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple500k_masstree.dat" using 1:5:6:7 w errorlines title "Silo", \
@@ -151,8 +151,8 @@ plot \
  "result_tictoc_ycsbA_tuple500k_masstree.dat" using 1:5:6:7 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple500k_masstree.dat" using 1:5:6:7 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple5m_ycsbA_masstree_ar.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbA_masstree_ar.pdf"
 plot \
  "result_cicada_ycsbA_tuple5m_masstree.dat" using 1:5:6:7 w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple5m_masstree.dat" using 1:5:6:7 w errorlines title "Silo", \
@@ -162,8 +162,8 @@ plot \
  "result_tictoc_ycsbA_tuple5m_masstree.dat" using 1:5:6:7 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple5m_masstree.dat" using 1:5:6:7 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500_ycsbB_masstree_ar.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbB_masstree_ar.pdf"
 plot \
  "result_cicada_ycsbB_tuple500_masstree.dat" using 1:5:6:7 w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple500_masstree.dat" using 1:5:6:7 w errorlines title "Silo", \
@@ -173,8 +173,8 @@ plot \
  "result_tictoc_ycsbB_tuple500_masstree.dat" using 1:5:6:7 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple500_masstree.dat" using 1:5:6:7 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500k_ycsbB_masstree_ar.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbB_masstree_ar.pdf"
 plot \
  "result_cicada_ycsbB_tuple500k_masstree.dat" using 1:5:6:7 w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple500k_masstree.dat" using 1:5:6:7 w errorlines title "Silo", \
@@ -184,8 +184,8 @@ plot \
  "result_tictoc_ycsbB_tuple500k_masstree.dat" using 1:5:6:7 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple500k_masstree.dat" using 1:5:6:7 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple5m_ycsbB_masstree_ar.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbB_masstree_ar.pdf"
 plot \
  "result_cicada_ycsbB_tuple5m_masstree.dat" using 1:5:6:7 w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple5m_masstree.dat" using 1:5:6:7 w errorlines title "Silo", \
@@ -195,8 +195,8 @@ plot \
  "result_tictoc_ycsbB_tuple5m_masstree.dat" using 1:5:6:7 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple5m_masstree.dat" using 1:5:6:7 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500_ycsbC_masstree_ar.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbC_masstree_ar.pdf"
 plot \
  "result_cicada_ycsbC_tuple500_masstree.dat" using 1:5:6:7 w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple500_masstree.dat" using 1:5:6:7 w errorlines title "Silo", \
@@ -206,8 +206,8 @@ plot \
  "result_tictoc_ycsbC_tuple500_masstree.dat" using 1:5:6:7 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbC_tuple500_masstree.dat" using 1:5:6:7 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500k_ycsbC_masstree_ar.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbC_masstree_ar.pdf"
 plot \
  "result_cicada_ycsbC_tuple500k_masstree.dat" using 1:5:6:7 w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple500k_masstree.dat" using 1:5:6:7 w errorlines title "Silo", \
@@ -217,8 +217,8 @@ plot \
  "result_tictoc_ycsbC_tuple500k_masstree.dat" using 1:5:6:7 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbC_tuple500k_masstree.dat" using 1:5:6:7 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple5m_ycsbC_masstree_ar.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbC_masstree_ar.pdf"
 plot \
  "result_cicada_ycsbC_tuple5m_masstree.dat" using 1:5:6:7 w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple5m_masstree.dat" using 1:5:6:7 w errorlines title "Silo", \
@@ -231,8 +231,8 @@ plot \
 set yrange [0:100]
 set ylabel "Cache-miss rate"
 set format y "%2.f"
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500_ycsbA_masstree_cm.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbA_masstree_cm.pdf"
 plot \
  "result_cicada_ycsbA_tuple500_masstree.dat" using 1:8:9:10 w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple500_masstree.dat" using 1:8:9:10 w errorlines title "Silo", \
@@ -242,8 +242,8 @@ plot \
  "result_tictoc_ycsbA_tuple500_masstree.dat" using 1:8:9:10 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple500_masstree.dat" using 1:8:9:10 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500k_ycsbA_masstree_cm.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbA_masstree_cm.pdf"
 plot \
  "result_cicada_ycsbA_tuple500k_masstree.dat" using 1:8:9:10 w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple500k_masstree.dat" using 1:8:9:10 w errorlines title "Silo", \
@@ -253,8 +253,8 @@ plot \
  "result_tictoc_ycsbA_tuple500k_masstree.dat" using 1:8:9:10 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple500k_masstree.dat" using 1:8:9:10 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple5m_ycsbA_masstree_cm.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbA_masstree_cm.pdf"
 plot \
  "result_cicada_ycsbA_tuple5m_masstree.dat" using 1:8:9:10 w errorlines title "Cicada", \
  "result_silo_ycsbA_tuple5m_masstree.dat" using 1:8:9:10 w errorlines title "Silo", \
@@ -264,8 +264,8 @@ plot \
  "result_tictoc_ycsbA_tuple5m_masstree.dat" using 1:8:9:10 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbA_tuple5m_masstree.dat" using 1:8:9:10 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500_ycsbB_masstree_cm.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbB_masstree_cm.pdf"
 plot \
  "result_cicada_ycsbB_tuple500_masstree.dat" using 1:8:9:10 w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple500_masstree.dat" using 1:8:9:10 w errorlines title "Silo", \
@@ -275,8 +275,8 @@ plot \
  "result_tictoc_ycsbB_tuple500_masstree.dat" using 1:8:9:10 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple500_masstree.dat" using 1:8:9:10 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500k_ycsbB_masstree_cm.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbB_masstree_cm.pdf"
 plot \
  "result_cicada_ycsbB_tuple500k_masstree.dat" using 1:8:9:10 w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple500k_masstree.dat" using 1:8:9:10 w errorlines title "Silo", \
@@ -286,8 +286,8 @@ plot \
  "result_tictoc_ycsbB_tuple500k_masstree.dat" using 1:8:9:10 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple500k_masstree.dat" using 1:8:9:10 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple5m_ycsbB_masstree_cm.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbB_masstree_cm.pdf"
 plot \
  "result_cicada_ycsbB_tuple5m_masstree.dat" using 1:8:9:10 w errorlines title "Cicada", \
  "result_silo_ycsbB_tuple5m_masstree.dat" using 1:8:9:10 w errorlines title "Silo", \
@@ -297,8 +297,8 @@ plot \
  "result_tictoc_ycsbB_tuple5m_masstree.dat" using 1:8:9:10 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbB_tuple5m_masstree.dat" using 1:8:9:10 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500_ycsbC_masstree_cm.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500_ycsbC_masstree_cm.pdf"
 plot \
  "result_cicada_ycsbC_tuple500_masstree.dat" using 1:8:9:10 w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple500_masstree.dat" using 1:8:9:10 w errorlines title "Silo", \
@@ -308,8 +308,8 @@ plot \
  "result_tictoc_ycsbC_tuple500_masstree.dat" using 1:8:9:10 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbC_tuple500_masstree.dat" using 1:8:9:10 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple500k_ycsbC_masstree_cm.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple500k_ycsbC_masstree_cm.pdf"
 plot \
  "result_cicada_ycsbC_tuple500k_masstree.dat" using 1:8:9:10 w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple500k_masstree.dat" using 1:8:9:10 w errorlines title "Silo", \
@@ -319,8 +319,8 @@ plot \
  "result_tictoc_ycsbC_tuple500k_masstree.dat" using 1:8:9:10 w errorlines pt 8 title "TicToc", \
  "result_si_ycsbC_tuple500k_masstree.dat" using 1:8:9:10 w errorlines pt 10 title "SI"
 
-set terminal pngcairo enhanced color size 24cm,24cm
-set output "comp_tuple5m_ycsbC_masstree_cm.png"
+set terminal pdfcairo enhanced color size 24cm,24cm
+set output "comp_tuple5m_ycsbC_masstree_cm.pdf"
 plot \
  "result_cicada_ycsbC_tuple5m_masstree.dat" using 1:8:9:10 w errorlines title "Cicada", \
  "result_silo_ycsbC_tuple5m_masstree.dat" using 1:8:9:10 w errorlines title "Silo", \

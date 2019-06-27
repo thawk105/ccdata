@@ -9,13 +9,14 @@ set logscale x
 set format x "%1.0t{/Symbol \264}10^{%T}"
 set xlabel "Database size"
 
+set grid
 
-set terminal pngcairo enhanced color size 20cm,20cm
+set terminal pdfcairo enhanced color size 20cm,20cm
 set format y "%1.0t{/Symbol \264}10^{%T}"
 unset yrange
 set ylabel "Throughput"
 set autoscale y
-set output "comp_tuple1k-1g_ycsbA_tps.png"
+set output "comp_tuple1k-1g_ycsbA_tps.pdf"
 plot \
 "result_cicada_ycsbA_tuple1k-1g.dat" using 1:2:3:4 w errorlines pt 1 title "Cicada" ,\
 "result_ermia_ycsbA_tuple1k-1g.dat" using 1:2:3:4 w errorlines pt 2 title "ERMIA" ,\
@@ -30,7 +31,7 @@ set ylabel "Abort Rate"
 set format y "%1.2f"
 set yrange [0:1]
 
-set output "comp_tuple1k-1g_ycsbA_ar.png"
+set output "comp_tuple1k-1g_ycsbA_ar.pdf"
 plot \
 "result_cicada_ycsbA_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 1 title "Cicada" ,\
 "result_ermia_ycsbA_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA" ,\
@@ -43,7 +44,7 @@ plot \
 set xtics
 set ylabel "Cache-miss rate"
 
-set output "comp_tuple1k-1g_ycsbA_ca.png"
+set output "comp_tuple1k-1g_ycsbA_ca.pdf"
 plot \
 "result_cicada_ycsbA_tuple1k-1g.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada" ,\
 "result_ermia_ycsbA_tuple1k-1g.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA" ,\
@@ -57,7 +58,7 @@ set format y "%1.0t{/Symbol \264}10^{%T}"
 unset yrange
 set ylabel "Throughput"
 set autoscale y
-set output "comp_tuple1k-1g_ycsbB_tps.png"
+set output "comp_tuple1k-1g_ycsbB_tps.pdf"
 plot \
 "result_cicada_ycsbB_tuple1k-1g.dat" using 1:2:3:4 w errorlines pt 1 title "Cicada" ,\
 "result_ermia_ycsbB_tuple1k-1g.dat" using 1:2:3:4 w errorlines pt 2 title "ERMIA" ,\
@@ -72,7 +73,7 @@ set ylabel "Abort Rate"
 set format y "%1.2f"
 set yrange [0:1]
 
-set output "comp_tuple1k-1g_ycsbB_ar.png"
+set output "comp_tuple1k-1g_ycsbB_ar.pdf"
 plot \
 "result_cicada_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 1 title "Cicada" ,\
 "result_ermia_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA" ,\
@@ -85,7 +86,7 @@ plot \
 set xtics
 set ylabel "Cache-miss rate"
 
-set output "comp_tuple1k-1g_ycsbB_ca.png"
+set output "comp_tuple1k-1g_ycsbB_ca.pdf"
 plot \
 "result_cicada_ycsbB_tuple1k-1g.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada" ,\
 "result_ermia_ycsbB_tuple1k-1g.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA" ,\
@@ -99,7 +100,7 @@ set format y "%1.0t{/Symbol \264}10^{%T}"
 unset yrange
 set ylabel "Throughput"
 set autoscale y
-set output "comp_tuple1k-1g_ycsbC_tps.png"
+set output "comp_tuple1k-1g_ycsbC_tps.pdf"
 plot \
 "result_cicada_ycsbC_tuple1k-1g.dat" using 1:2:3:4 w errorlines pt 1 title "Cicada" ,\
 "result_ermia_ycsbC_tuple1k-1g.dat" using 1:2:3:4 w errorlines pt 2 title "ERMIA" ,\
@@ -114,7 +115,7 @@ set ylabel "Abort Rate"
 set format y "%1.2f"
 set yrange [0:1]
 
-set output "comp_tuple1k-1g_ycsbC_ar.png"
+set output "comp_tuple1k-1g_ycsbC_ar.pdf"
 plot \
 "result_cicada_ycsbC_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 1 title "Cicada" ,\
 "result_ermia_ycsbC_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA" ,\
@@ -127,7 +128,7 @@ plot \
 set xtics
 set ylabel "Cache-miss rate"
 
-set output "comp_tuple1k-1g_ycsbC_ca.png"
+set output "comp_tuple1k-1g_ycsbC_ca.pdf"
 plot \
 "result_cicada_ycsbC_tuple1k-1g.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada" ,\
 "result_ermia_ycsbC_tuple1k-1g.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA" ,\

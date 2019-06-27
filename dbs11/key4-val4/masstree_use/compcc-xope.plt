@@ -33,10 +33,10 @@ set xlabel "Operations / Transaction"
 set xlabel font "Courier,12"
 set ylabel offset -2.5,0
 
-set terminal pngcairo enhanced color size 20cm,20cm
+set terminal pdfcairo enhanced color size 20cm,20cm
 set ylabel "Throughput (K tps)"
 set logscale y
-set output "comp_ycsbB_tuple100m_skew08_ope10-100_tps.png"
+set output "comp_ycsbB_tuple100m_skew08_ope10-100_tps.pdf"
 plot \
 "result_mocc_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:(h($2, $1)):(h($3, $1)):(h($4, $1)) w errorlines pt 1 title "MOCC", \
 "result_ss2pl-dlr0_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:(h($2, $1)):(h($3, $1)):(h($4, $1)) w errorlines pt 2 title "SS2PL - Normal", \
@@ -49,14 +49,14 @@ set ylabel "Abort Rate"
 set format y "%1.2f"
 unset logscale y
 set yrange [0:1]
-set output "comp_ycsbB_tuple100m_skew08_ope10-100_ar.png"
+set output "comp_ycsbB_tuple100m_skew08_ope10-100_ar.pdf"
 plot \
 "result_mocc_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:5:6:7 w errorlines pt 1 title "MOCC", \
 "result_ss2pl-dlr0_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:5:6:7 w errorlines pt 2 title "SS2PL - Normal", \
 "result_ss2pl-dlr1_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:5:6:7 w errorlines pt 3 title "SS2PL - No Wait", \
 
 set ylabel "cache-miss rate"
-set output "comp_ycsbB_tuple100m_skew08_ope10-100_cm.png"
+set output "comp_ycsbB_tuple100m_skew08_ope10-100_cm.pdf"
 plot \
 "result_mocc_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "MOCC", \
 "result_ss2pl-dlr0_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "SS2PL - Normal", \

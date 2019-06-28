@@ -57,7 +57,7 @@ plot \
 "result_ss2pl-dlr0_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:5:6:7 w errorlines pt 2 title "SS2PL - Normal", \
 "result_ss2pl-dlr1_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:5:6:7 w errorlines pt 3 title "SS2PL - No Wait", \
 
-set ylabel "cache-miss rate"
+set ylabel "Cache-Miss Rate"
 set output "comp_ycsbB_tuple100m_skew08_ope10-100_cm.pdf"
 plot \
 "result_mocc_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "MOCC", \

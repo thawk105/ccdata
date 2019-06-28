@@ -24,7 +24,7 @@ g(a) = a / 1e2
 set key outside horiz center top box width 1
 
 set format x "%1.0t{/Symbol \264}10^{%T}"
-set xlabel "Database size"
+set xlabel "Database Size"
 set logscale x
 
 set ylabel "Throughput (M tps)"
@@ -55,7 +55,7 @@ plot \
 "result_tictoc_ycsbB_tuple1000-100m.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc", \
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple1000-100m_ycsbB_ca.pdf"
 plot \
@@ -96,7 +96,7 @@ plot \
 "result_tictoc_ycsbA_tuple1000-100m.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc", \
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple1000-100m_ycsbA_ca.pdf"
 plot \

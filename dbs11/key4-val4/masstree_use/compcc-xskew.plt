@@ -35,7 +35,7 @@ set autoscale y
 set ylabel "Throughput (million tps)"
 set ytics autofreq
 
-set xlabel "skew"
+set xlabel "Skew"
 set xtics ('0' 0, '0.1' 0.1, '0.2' 0.2, '0.3' 0.3, '0.4' 0.4, '0.5' 0.5, '0.6' 0.6, '0.7' 0.7, '0.8' 0.8, '0.9' 0.9, '0.99' 0.99)
 
 set terminal pdfcairo enhanced color size 20cm,20cm
@@ -64,7 +64,7 @@ plot \
 "result_tictoc_ycsbB_tuple100m_skew0-099.dat" using 1:5:6:7 w errorlines pt 12 title "TicToc", \
 
 set output "comp_ycsbB_tuple100m_skew0-099_cm.pdf"
-set ylabel "cache-miss rate"
+set ylabel "Cache-Miss Rate"
 plot \
 "result_cicada_ycsbB_tuple100m_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada", \
 "result_ermia_ycsbB_tuple100m_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA", \
@@ -93,7 +93,7 @@ plot \
 "result_ss2pl-dlr0_ycsbB_tuple100m_skew06-085.dat" using 1:5:6:7 w errorlines pt 2 title "SS2PL - Normal", \
 "result_ss2pl-dlr1_ycsbB_tuple100m_skew06-085.dat" using 1:5:6:7 w errorlines pt 3 title "SS2PL - No Wait", \
 
-set ylabel "cache-miss rate"
+set ylabel "Cache-Miss Rate"
 set output "comp_ycsbB_tuple100m_skew06-085_cm.pdf"
 plot \
 "result_mocc_ycsbB_tuple100m_skew06-085.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "MOCC", \
@@ -101,7 +101,7 @@ plot \
 "result_ss2pl-dlr1_ycsbB_tuple100m_skew06-085.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "SS2PL - No Wait", \
 
 set xtics ('0' 0, '0.1' 0.1, '0.2' 0.2, '0.3' 0.3, '0.4' 0.4, '0.5' 0.5, '0.6' 0.6, '0.7' 0.7, '0.8' 0.8, '0.9' 0.9, '0.99' 0.99)
-set ylabel "Throughput (million tps)"
+set ylabel "Throughput (M tps)"
 set autoscale y
 set terminal pdfcairo enhanced color size 20cm,20cm
 set output "comp_ycsbA_tuple100m_skew0-099_tps.pdf"
@@ -129,7 +129,7 @@ plot \
 "result_tictoc_ycsbA_tuple100m_skew0-099.dat" using 1:5:6:7 w errorlines pt 12 title "TicToc", \
 
 set output "comp_ycsbA_tuple100m_skew0-099_cm.pdf"
-set ylabel "cache-miss rate"
+set ylabel "Cache-Miss Rate"
 plot \
 "result_cicada_ycsbA_tuple100m_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada", \
 "result_ermia_ycsbA_tuple100m_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA", \
@@ -169,7 +169,7 @@ plot \
 "result_tictoc_ycsbA_tuple1k_skew0-099.dat" using 1:5:6:7 w errorlines pt 12 title "TicToc", \
 
 set output "comp_ycsbA_tuple1k_skew0-099_cm.pdf"
-set ylabel "cache-miss rate"
+set ylabel "Cache-Miss Rate"
 plot \
 "result_cicada_ycsbA_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada", \
 "result_ermia_ycsbA_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA", \

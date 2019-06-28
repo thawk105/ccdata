@@ -1,5 +1,20 @@
 reset
 
+set xlabel font "Courier,27"
+set ylabel font "Courier,27"
+set tics   font "Courier,27"
+set key    font "Courier,27"
+set key spacing 1
+
+set xtics  offset 0,-1
+set xlabel offset 0,-2
+set ylabel offset -5,0
+
+set tmargin 4
+set lmargin 14
+set bmargin 7
+set rmargin 7
+
 f(a) = a / 1e6
 g(a) = a / 1e2
 

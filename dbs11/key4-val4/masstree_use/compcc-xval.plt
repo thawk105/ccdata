@@ -32,7 +32,7 @@ g(a) = a / 1e2
 set ytics autofreq
 
 set autoscale x
-set xlabel "Value size"
+set xlabel "Payload Size"
 
 set terminal pdfcairo enhanced color size 20cm,20cm
 set ylabel "Throughput (K tps)"
@@ -56,7 +56,7 @@ plot \
 "result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "TicToc-nw", \
 "result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "TicToc-nw-ea", \
 
-set ylabel "Extra reads (/sec)"
+set ylabel "Extra Reads (/sec)"
 set autoscale y
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_er.pdf"
 plot \
@@ -84,7 +84,7 @@ plot \
 "result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc-nw", \
 "result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc-nw-ea", \
 
-set ylabel "cache-miss rate"
+set ylabel "Cache-Miss Rate"
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_cm.pdf"
 plot \
 "result_cicada_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada", \
@@ -102,7 +102,7 @@ plot \
 "result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "TicToc-nw", \
 "result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "TicToc-nw-ea", \
 
-set ylabel "Phase rate"
+set ylabel "Phase Rate"
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_silo&tictoc_pr.pdf"
 plot \
 "result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 1 title "Silo, read pahse", \

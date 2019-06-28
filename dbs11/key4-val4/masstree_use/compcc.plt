@@ -127,7 +127,7 @@ plot \
  "result_si_ycsbC_tuple5m_masstree.dat" using 1:(f($2), f($3), f($4)) w errorlines pt 10 title "SI"
 
 set yrange [0:1]
-set ylabel "Abort rate"
+set ylabel "Abort Rate"
 set format y "%.1f"
 set terminal pdfcairo enhanced color size 24cm,24cm
 set output "comp_tuple500_ycsbA_masstree_ar.pdf"
@@ -229,7 +229,7 @@ plot \
  "result_si_ycsbC_tuple5m_masstree.dat" using 1:5:6:7 w errorlines pt 10 title "SI"
 
 set yrange [0:100]
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 set format y "%2.f"
 set terminal pdfcairo enhanced color size 24cm,24cm
 set output "comp_tuple500_ycsbA_masstree_cm.pdf"

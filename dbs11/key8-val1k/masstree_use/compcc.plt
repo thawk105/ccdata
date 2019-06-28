@@ -1,5 +1,20 @@
 reset
 
+set xlabel font "Courier,27"
+set ylabel font "Courier,27"
+set tics   font "Courier,27"
+set key    font "Courier,27"
+set key spacing 1
+
+set xtics  offset 0,-1
+set xlabel offset 0,-2
+set ylabel offset -9,0
+
+set tmargin 8
+set lmargin 20
+set bmargin 7
+set rmargin 7
+
 f(a) = a / 1e6
 g(a) = a / 1e2
 
@@ -11,7 +26,6 @@ set grid
 set xlabel "Number of Threads"
 set autoscale y
 set autoscale x
-
 
 set terminal pdfcairo enhanced color size 20cm,20cm
 unset yrange

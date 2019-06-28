@@ -21,7 +21,7 @@ g(a) = a / 1e2
 set key outside horiz center top box
 
 #set format x "%1.0t{/Symbol \264}10^{%T}"
-set xlabel "read ratio (%/100%)"
+set xlabel "Read Ratio (%/100%)"
 
 set grid
 
@@ -49,7 +49,7 @@ plot \
 "result_tictoc_tuple1m_rratio10-90.dat" using 1:5:6:7 w errorlines pt 2 title "TicToc", \
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple1m_rratio10-90_ca.pdf"
 plot \
@@ -81,7 +81,7 @@ plot \
 #"result_tictoc--_tuple100m_rratio10-90.dat" using 1:5:6:7 w errorlines pt 2 title "TicToc--", \
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple100m_rratio10-90_ca.pdf"
 plot \
@@ -112,7 +112,7 @@ plot \
 #"result_tictoc--_tuple1k_rratio10-90.dat" using 1:5:6:7 w errorlines pt 2 title "TicToc--", \
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple1k_rratio10-90_ca.pdf"
 plot \
@@ -142,7 +142,7 @@ plot \
 "result_tictoc--_tuple100m_skew09_rratio10-90.dat" using 1:5:6:7 w errorlines pt 2 title "TicToc--", \
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple100m_skew09_rratio10-90_ca.pdf"
 plot \
@@ -173,14 +173,14 @@ plot \
 "result_tictoc_tuple1m_rratio0-100.dat" using 1:5:6:7 w errorlines pt 2 title "TicToc", \
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple1m_rratio0-100_ca.pdf"
 plot \
 "result_silo_tuple1m_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Silo", \
 "result_tictoc_tuple1m_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "TicToc", \
 
-set ylabel "rts update rate"
+set ylabel "Rts Update Rate"
 set output "comp_tuple1m_rratio0-100_rr.pdf"
 plot \
 "result_tictoc_tuple1m_rratio0-100.dat" using 1:11 w lp title "TicToc", \
@@ -208,14 +208,14 @@ plot \
 "result_tictoc_tuple100m_rratio0-100.dat" using 1:5:6:7 w errorlines pt 2 title "TicToc", \
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple100m_rratio0-100_ca.pdf"
 plot \
 "result_silo_tuple100m_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Silo", \
 "result_tictoc_tuple100m_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "TicToc", \
 
-set ylabel "rts update rate"
+set ylabel "Rts Update Rate"
 set output "comp_tuple100m_rratio0-100_rr.pdf"
 plot \
 "result_tictoc_tuple100m_rratio0-100.dat" using 1:11 w lp title "TicToc", \
@@ -241,14 +241,14 @@ plot \
 "result_tictoc_tuple1k_rratio0-100.dat" using 1:5:6:7 w errorlines pt 2 title "TicToc", \
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple1k_rratio0-100_ca.pdf"
 plot \
 "result_silo_tuple1k_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Silo", \
 "result_tictoc_tuple1k_rratio0-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "TicToc", \
 
-set ylabel "rts update rate"
+set ylabel "Rts Update Rate"
 set output "comp_tuple1k_rratio0-100_rr.pdf"
 plot \
 "result_tictoc_tuple1k_rratio0-100.dat" using 1:11 w lp title "TicToc", \

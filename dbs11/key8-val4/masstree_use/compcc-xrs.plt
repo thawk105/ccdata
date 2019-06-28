@@ -8,10 +8,10 @@ set key spacing 1
 
 set xtics  offset 0,-1
 set xlabel offset 0,-2
-set ylabel offset -5,0
+set ylabel offset -9,0
 
-set tmargin 4
-set lmargin 14
+set tmargin 8
+set lmargin 20 
 set bmargin 7
 set rmargin 7
 
@@ -22,7 +22,7 @@ set key outside horiz center top box
 
 set logscale x
 set format x "%1.0t{/Symbol \264}10^{%T}"
-set xlabel "Database size"
+set xlabel "Database Size"
 
 set grid
 
@@ -95,7 +95,7 @@ plot \
 "result_tictoc_ycsbC_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc" ,\
 
 set xtics
-set ylabel "Cache-miss rate"
+set ylabel "Cache-Miss Rate"
 
 set output "comp_tuple1k-1g_ycsbA_ca.pdf"
 plot \

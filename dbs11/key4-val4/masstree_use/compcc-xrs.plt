@@ -1,11 +1,27 @@
 reset
 
+set xlabel font "Courier,27"
+set ylabel font "Courier,27"
+set tics   font "Courier,27"
+set key    font "Courier,27"
+set key spacing 1
+
+set xlabel offset 0,-3
+set ylabel offset -9,0
+
+set xtics offset 0,-1
+
+set lmargin 20 
+set rmargin 8
+set bmargin 8 
+
+set size square
+set grid
+
 f(a) = a / 1e6
 g(a) = a / 1e2
 
-set key outside horiz center top box
-
-set grid
+set key outside horiz center top box width 1
 
 set format x "%1.0t{/Symbol \264}10^{%T}"
 set xlabel "Database size"

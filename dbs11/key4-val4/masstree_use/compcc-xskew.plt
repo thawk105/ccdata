@@ -1,39 +1,42 @@
 reset
-set tics   font "Courier,12"
 
-set key    font "Courier,12"
+set xlabel font "Courier,27"
+set ylabel font "Courier,27"
+set tics   font "Courier,27"
+set key    font "Courier,27"
+set key spacing 1
+
+set xtics  offset 0,-1
+set xlabel offset 0,-2
+set ylabel offset -8,0
+
+set tmargin 8
+set lmargin 15
+set bmargin 8
+set rmargin 3
+
 set key outside horiz center box width 0.8 top
-set key spacing 1.5
 
 #set format y "%2.0t{/Symbol \264}10^{%T}"
 set format y "%1.1f"
-set notitle
 
+set notitle
 set grid
+set size square
 
 set autoscale x
 
-#set origin 0.05,0.05
-set size square
 
 f(a) = a / 1e6
 g(a) = a / 1e2
 h(a) = a / 1e3
 
-set tmargin 5
-set lmargin 10
-set bmargin 5
-set rmargin 3
 set autoscale y
 set ylabel "Throughput (million tps)"
-set ylabel font "Courier,12"
-set ylabel offset 0,0
 set ytics autofreq
 
 set xlabel "skew"
 set xtics ('0' 0, '0.1' 0.1, '0.2' 0.2, '0.3' 0.3, '0.4' 0.4, '0.5' 0.5, '0.6' 0.6, '0.7' 0.7, '0.8' 0.8, '0.9' 0.9, '0.99' 0.99)
-set xlabel font "Courier,12"
-set ylabel offset -2.5,0
 
 set terminal pdfcairo enhanced color size 20cm,20cm
 set output "comp_ycsbB_tuple100m_skew0-099_tps.pdf"

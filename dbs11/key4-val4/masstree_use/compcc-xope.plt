@@ -1,9 +1,20 @@
 reset
-set tics   font "Courier,12"
 
-set key    font "Courier,12"
-set key outside horiz center box width 0.8 top
-set key spacing 1.5
+set xlabel font "Courier,27"
+set ylabel font "Courier,27"
+set tics   font "Courier,27"
+set key    font "Courier,27"
+set key spacing 1.2
+
+set xlabel offset 0,-1.5
+set ylabel offset -8,0
+
+set tmargin 8
+set lmargin 15
+set bmargin 7
+set rmargin 3
+
+set key outside horiz center top box
 
 set format y "%2.0t{/Symbol \264}10^{%T}"
 #set format y "%1.1f"
@@ -14,24 +25,15 @@ set grid
 set autoscale x
 set autoscale y
 
-#set origin 0.05,0.05
 set size square
 
 f(a) = a / 1e3
 g(a) = a / 1e2
 h(a, b) = a / 1e3 / b
 
-set tmargin 5
-set lmargin 10
-set bmargin 5
-set rmargin 3
-set ylabel font "Courier,12"
-set ylabel offset 0,0
 set ytics autofreq
 
 set xlabel "Operations / Transaction"
-set xlabel font "Courier,12"
-set ylabel offset -2.5,0
 
 set terminal pdfcairo enhanced color size 20cm,20cm
 set ylabel "Throughput (K tps)"

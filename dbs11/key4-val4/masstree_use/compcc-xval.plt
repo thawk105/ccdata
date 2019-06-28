@@ -1,19 +1,19 @@
 reset
 
-set tics   font "Courier,27"
-set key    font "Courier,27"
-set ylabel font "Courier,27"
-set xlabel font "Courier,27"
-set key spacing 1.5
-
-set xtics  offset 0,-1
-set xlabel offset 0,-3
-set ylabel offset -10,0
-
-set tmargin 12
-set lmargin 18
-set bmargin 8
-set rmargin 5
+#set tics   font "Courier,27"
+#set key    font "Courier,27"
+#set ylabel font "Courier,27"
+#set xlabel font "Courier,27"
+#set key spacing 1.5
+#
+#set xtics  offset 0,-1
+#set xlabel offset 0,-3
+#set ylabel offset -10,0
+#
+#set tmargin 12
+#set lmargin 18
+#set bmargin 8
+#set rmargin 5
 
 set key outside horiz center box width 0.8 top
 
@@ -22,7 +22,6 @@ set format y "%2.0t{/Symbol \264}10^{%T}"
 
 set notitle
 set grid
-set size square
 
 set autoscale y
 
@@ -34,7 +33,7 @@ set ytics autofreq
 set autoscale x
 set xlabel "Payload Size"
 
-set terminal pdfcairo enhanced color size 20cm,20cm
+set terminal pdfcairo enhanced color size 10cm,5cm
 set ylabel "Throughput (K tps)"
 set autoscale y
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_tps.pdf"

@@ -1,18 +1,18 @@
 reset
 
-set xlabel font "Courier,27"
-set ylabel font "Courier,27"
-set tics   font "Courier,27"
-set key    font "Courier,27"
-set key spacing 1.2
-
-set xlabel offset 0,-1.5
-set ylabel offset -8,0
-
-set tmargin 8
-set lmargin 15
-set bmargin 7
-set rmargin 3
+#set xlabel font "Courier,27"
+#set ylabel font "Courier,27"
+#set tics   font "Courier,27"
+#set key    font "Courier,27"
+#set key spacing 1.2
+#
+#set xlabel offset 0,-1.5
+#set ylabel offset -8,0
+#
+#set tmargin 8
+#set lmargin 15
+#set bmargin 7
+#set rmargin 3
 
 set key outside horiz center top box
 
@@ -25,8 +25,6 @@ set grid
 set autoscale x
 set autoscale y
 
-set size square
-
 f(a) = a / 1e3
 g(a) = a / 1e2
 h(a, b) = a / 1e3 / b
@@ -35,7 +33,7 @@ set ytics autofreq
 
 set xlabel "Operations / Transaction"
 
-set terminal pdfcairo enhanced color size 20cm,20cm
+set terminal pdfcairo enhanced color size 10cm,5cm
 set ylabel "Throughput (K tps)"
 set logscale y
 set output "comp_ycsbB_tuple100m_skew08_ope10-100_tps.pdf"

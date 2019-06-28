@@ -1,33 +1,32 @@
 reset
 
-set xlabel font "Courier,27"
-set ylabel font "Courier,27"
-set tics   font "Courier,27"
-set key    font "Courier,27"
-set key spacing 1
-
-set xtics  offset 0,-1
-set xlabel offset 0,-2
-set ylabel offset -9,0
-
-set tmargin 8
-set lmargin 20
-set bmargin 7
-set rmargin 7
+#set xlabel font "Courier,27"
+#set ylabel font "Courier,27"
+#set tics   font "Courier,27"
+#set key    font "Courier,27"
+#set key spacing 1
+#
+#set xtics  offset 0,-1
+#set xlabel offset 0,-2
+#set ylabel offset -9,0
+#
+#set tmargin 8
+#set lmargin 20
+#set bmargin 7
+#set rmargin 7
 
 f(a) = a / 1e6
 g(a) = a / 1e2
 
 set key outside horiz center top box
 
-set size square
 set grid
 
 #set format x "%1.0t{/Symbol \264}10^{%T}"
 set xlabel "Operations / Transaction"
 
 
-set terminal pdfcairo enhanced color size 20cm,20cm
+set terminal pdfcairo enhanced color size 7.5cm,5cm
 unset yrange
 set logscale y
 set format y "%1.0t{/Symbol \264}10^{%T}"

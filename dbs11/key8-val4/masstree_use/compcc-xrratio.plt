@@ -1,19 +1,19 @@
 reset
 
-set xlabel font "Courier,27"
-set ylabel font "Courier,27"
-set tics   font "Courier,27"
-set key    font "Courier,27"
+#set xlabel font "Courier,27"
+#set ylabel font "Courier,27"
+#set tics   font "Courier,27"
+#set key    font "Courier,27"
 set key spacing 1
 
-set xtics  offset 0,-1
-set xlabel offset 0,-2
-set ylabel offset -5,0
-
-set tmargin 4
-set lmargin 14
-set bmargin 7
-set rmargin 7
+#set xtics  offset 0,-1
+#set xlabel offset 0,-2
+#set ylabel offset -5,0
+#
+#set tmargin 4
+#set lmargin 14
+#set bmargin 7
+#set rmargin 7
 
 f(a) = a / 1e6
 g(a) = a / 1e2
@@ -27,7 +27,7 @@ set grid
 
 set xrange [10:90]
 
-set terminal pdfcairo enhanced color size 20cm,20cm
+set terminal pdfcairo enhanced color size 5cm,5cm
 #set format y "%1.0t{/Symbol \264}10^{%T}"
 set format y "%g"
 set ylabel "Throughput (M tps)"
@@ -57,7 +57,6 @@ plot \
 "result_tictoc_tuple1m_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "TicToc", \
 #"result_tictoc--_tuple1m_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "TicToc--", \
 
-set terminal pdfcairo enhanced color size 20cm,20cm
 #set format y "%1.0t{/Symbol \264}10^{%T}"
 set format y "%g"
 unset yrange
@@ -89,7 +88,6 @@ plot \
 "result_tictoc_tuple100m_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "TicToc", \
 #"result_tictoc--_tuple100m_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "TicToc--", \
 
-set terminal pdfcairo enhanced color size 20cm,20cm
 #set format y "%1.0t{/Symbol \264}10^{%T}"
 set format y "%g"
 unset yrange
@@ -152,7 +150,6 @@ plot \
 
 set xrange [0:100]
 
-set terminal pdfcairo enhanced color size 20cm,20cm
 #set format y "%1.0t{/Symbol \264}10^{%T}"
 set format y "%g"
 set ylabel "Throughput (M tps)"
@@ -185,8 +182,6 @@ set output "comp_tuple1m_rratio0-100_rr.pdf"
 plot \
 "result_tictoc_tuple1m_rratio0-100.dat" using 1:11 w lp title "TicToc", \
 
-set terminal pdfcairo enhanced color size 20cm,20cm
-set terminal pdfcairo enhanced color size 20cm,20cm
 #set format y "%1.0t{/Symbol \264}10^{%T}"
 set format y "%g"
 unset yrange
@@ -220,7 +215,6 @@ set output "comp_tuple100m_rratio0-100_rr.pdf"
 plot \
 "result_tictoc_tuple100m_rratio0-100.dat" using 1:11 w lp title "TicToc", \
 
-set terminal pdfcairo enhanced color size 20cm,20cm
 #set format y "%1.0t{/Symbol \264}10^{%T}"
 set format y "%g"
 unset yrange

@@ -8,7 +8,7 @@ reset
 #
 #set xtics  offset 0,-1
 #set xlabel offset 0,-2
-#set ylabel offset -9,0
+set ylabel offset -1,0
 #
 #set tmargin 8
 #set lmargin 20 
@@ -23,7 +23,7 @@ set key outside horiz center top box
 set logscale x
 #set format x "%1.0t{/Symbol \264}10^{%T}"
 set format x "10^{%T}"
-set xlabel "Database Size"
+set xlabel "# records"
 
 set grid
 
@@ -61,6 +61,7 @@ plot \
 "result_ss2pl_ycsbC_tuple1k-1g.dat" using 1:2:3:4 w errorlines pt 8 title "SS2PL" ,\
 "result_tictoc_ycsbC_tuple1k-1g.dat" using 1:2:3:4 w errorlines pt 10 title "TicToc" ,\
 
+set ylabel offset 0,0
 set ylabel "Abort Rate"
 set format y "%1.2f"
 set yrange [0:1]

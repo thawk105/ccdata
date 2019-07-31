@@ -1,0 +1,13 @@
+#worker threads, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss
+#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../si.exe tuple 10 224 50 off 0.9 on 2100 10 3
+4 0 0 0 0.0000 -nan -nan, 51 50.896 51.118
+100 0 0 0 0.0000 -nan -nan, 50 50.466 50.749
+200 0 0 0 0.0000 -nan -nan, 50 50.503 50.879
+300 0 0 0 0.0000 -nan -nan, 47 47.264 47.618
+400 0 0 0 0.0000 -nan -nan, 47 47.055 47.444
+500 0 0 0 0.0000 -nan -nan, 46 46.460 46.904
+600 0 0 0 0.0000 -nan -nan, 47 46.756 47.197
+700 0 0 0 0.0000 -nan -nan, 46 46.733 47.217
+800 0 0 0 0.0000 -nan -nan, 46 46.808 47.220
+900 0 0 0 0.0000 -nan -nan, 50 50.069 50.723
+1000 0 0 0 0.0000 -nan -nan, 50 50.633 50.765

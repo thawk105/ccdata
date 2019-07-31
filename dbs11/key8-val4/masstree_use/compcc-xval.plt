@@ -55,7 +55,7 @@ plot \
 "result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "TicToc-nw", \
 "result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "TicToc-nw-ea", \
 
-set ylabel "Extra Reads (/sec)"
+set ylabel "# extra reads (/sec)"
 set autoscale y
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_er.pdf"
 plot \
@@ -101,18 +101,17 @@ plot \
 "result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "TicToc-nw", \
 "result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "TicToc-nw-ea", \
 
-set terminal pdfcairo enhanced color size 20cm,10cm
 set ylabel "Phase Rate"
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_silo&tictoc_pr.pdf"
 plot \
-"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 1 title "Silo, read pahse", \
-"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 2 title "TicToc, read phase", \
-"result_tictoc-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 3 title "TicToc-ea, read phase", \
-"result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 4 title "TicToc-nw, read phase", \
-"result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 6 title "TicToc-nw-ea, read phase", \
-"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 8 title "Silo, vali phase", \
-"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 10 title "TicToc, vali phase", \
-"result_tictoc-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 12 title "TicToc-ea, vali phase", \
-"result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 14 title "TicToc-nw, vali phase", \
-"result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 16 title "TicToc-nw-ea, vali phase", \
+"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 1 title "Silo, read latency", \
+"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 2 title "TicToc, read latency", \
+"result_tictoc-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 3 title "TicToc-ea, read latency", \
+"result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 4 title "TicToc-nw, read latency", \
+"result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:12 w errorlines pt 6 title "TicToc-nw-ea, read latency", \
+"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 8 title "Silo, vali latency", \
+"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 10 title "TicToc, vali latency", \
+"result_tictoc-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 12 title "TicToc-ea, vali latency", \
+"result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 14 title "TicToc-nw, vali latency", \
+"result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:13 w errorlines pt 16 title "TicToc-nw-ea, vali latency", \
 

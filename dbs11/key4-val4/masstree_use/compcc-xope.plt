@@ -35,7 +35,7 @@ set xlabel "Operations / Transaction"
 
 set terminal pdfcairo enhanced color size 10cm,5cm
 set ylabel "Throughput (K tps)"
-set logscale y
+set autoscale y
 set output "comp_ycsbB_tuple100m_skew08_ope10-100_tps.pdf"
 plot \
 "result_mocc_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:(h($2, $1)):(h($3, $1)):(h($4, $1)) w errorlines pt 1 title "MOCC", \

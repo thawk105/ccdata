@@ -2,13 +2,13 @@ reset
 
 #set xlabel font "Courier,27"
 #set ylabel font "Courier,27"
-#set tics   font "Courier,27"
-#set key    font "Courier,27"
+set xtics   font "Courier,6"
+set key    font "Courier,10"
 #set key spacing 1
 #
 #set xtics  offset 0,-1
 #set xlabel offset 0,-2
-#set ylabel offset -8,0
+set ylabel offset -1,0
 #
 #set tmargin 8
 #set lmargin 15
@@ -21,16 +21,14 @@ set key outside horiz center box top
 
 set notitle
 set grid
-set size 1,1
 
 set autoscale x
-
+set autoscale y
 
 f(a) = a / 1e6
 g(a) = a / 1e2
 h(a) = a / 1e3
 
-set autoscale y
 set format y "%1.0f"
 set ylabel "Throughput (M tps)"
 set ytics autofreq
@@ -38,7 +36,7 @@ set ytics autofreq
 set xlabel "Skew"
 set xtics ('0' 0, '0.1' 0.1, '0.2' 0.2, '0.3' 0.3, '0.4' 0.4, '0.5' 0.5, '0.6' 0.6, '0.7' 0.7, '0.8' 0.8, '0.9' 0.9, '0.99' 0.99)
 
-set terminal pdfcairo enhanced color size 10cm,5cm
+set terminal pdfcairo enhanced color size 5cm,5cm
 set output "comp_ycsbB_tuple100m_skew0-099_tps.pdf"
 plot \
 "result_cicada_ycsbB_tuple100m_skew0-099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Cicada", \
@@ -144,7 +142,7 @@ set format y "%1.0f"
 set ylabel "Throughput (K tps)"
 unset yrange
 set format y "%2.0t{/Symbol \264}10^{%T}"
-set logscale y
+set autoscale y
 set output "comp_ycsbA_tuple1k_skew0-099_tps.pdf"
 plot \
 "result_cicada_ycsbA_tuple1k_skew0-099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 1 title "Cicada", \
@@ -155,6 +153,7 @@ plot \
 "result_ss2pl-dlr1_ycsbA_tuple1k_skew0-099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 10 title "SS2PL", \
 "result_tictoc_ycsbA_tuple1k_skew0-099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 12 title "TicToc", \
 
+unset logscale y
 set ylabel "Abort Rate"
 set format y "%1.2f"
 set yrange [0:1]

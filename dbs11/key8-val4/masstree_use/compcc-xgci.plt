@@ -27,9 +27,8 @@ set xlabel "GC interval[us]"
 set grid
 
 set terminal pdfcairo enhanced color size 10cm,10cm
-set format y "%1.2t{/Symbol \264}10^{%T}"
-set format y2 "%1.2t{/Symbol \264}10^{%T}"
-#set format y2 "%1.2f"
+set format y "%1.1t{/Symbol \264}10^{%T}"
+set format y2 "%1.1t{/Symbol \264}10^{%T}"
 set ylabel "Throughput"
 #set y2label "Rate"
 #set y2range [0:1]
@@ -57,7 +56,7 @@ reset
 #
 #set xtics  offset 0,-1
 #set xlabel offset 0,-2
-set ylabel offset -1,0
+#set ylabel offset -1,0
 #
 #set tmargin 8
 #set lmargin 20 
@@ -66,7 +65,7 @@ set ylabel offset -1,0
 
 f(a) = a / 1e6
 g(a) = a / 1e2
-h(a) = 1000000 / a
+h(a) = 1000000000 / a
 i(a,b) = a * b
 j(a,b,c,d,e,f) = a - b - c - d - e - f
 
@@ -74,13 +73,14 @@ set key outside horiz center top box
 
 set format x "10^{%T}"
 set format x "%1.0t{/Symbol \264}10^{%T}"
+set format y2 "%1.1f"
 set xlabel "GC interval[us]"
 
 set grid
 
 set terminal pdfcairo enhanced color size 10cm,10cm
 set output "comp_cicada_ycsbA_tuple1m_gci10us-1s_main-latency.pdf"
-set ylabel "Latency [us]"
+set ylabel "Latency [ns]"
 set style histogram rowstacked
 set boxwidth 0.5 relative
 set style fill solid border lc rgb "black"

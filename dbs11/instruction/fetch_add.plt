@@ -24,7 +24,7 @@ set grid
 f(a) = a / 1e2
 
 set autoscale y
-set format y "%2.0t{/Symbol \264}10^{%T}"
+set format y "%2.1t{/Symbol \264}10^{%T}"
 set terminal pdfcairo enhanced color size 5cm,5cm
 set output "fetch_add_tps.pdf"
 plot \

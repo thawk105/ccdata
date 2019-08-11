@@ -3,7 +3,7 @@ reset
 #set xlabel font "Courier,27"
 #set ylabel font "Courier,27"
 #set tics   font "Courier,27"
-#set key    font "Courier,27"
+#set key    font "Courier,8"
 #set key spacing 1
 #
 #set xtics  offset 0,-1
@@ -27,8 +27,8 @@ set xlabel "# records"
 
 set grid
 
-set terminal pdfcairo enhanced color size 5cm,5cm
-set format y "%1.0t{/Symbol \264}10^{%T}"
+set terminal pdfcairo enhanced color size 6cm,6cm
+set format y "%1.1t{/Symbol \264}10^{%T}"
 set ylabel "Throughput"
 set autoscale y
 set output "comp_tuple1k-1g_ycsbA_tps.pdf"

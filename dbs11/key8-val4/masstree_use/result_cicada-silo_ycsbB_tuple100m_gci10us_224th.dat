@@ -1,4 +1,4 @@
 #tuple num, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss, avg-make_procedure_latency_rate, avg-read_latency_rate, avg-write_latency_rate, avg-vali_latency_rate, avg-gc_latency_rate avg-maxrss
 #sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../cicada.exe 100000000 10 224 95 off 0 on off off 2100 5 2 gci 30
-Cicada 14661030 14605687 14716127 0.0000 0.0000 0.0000 61 61.926 61.987 0.0358 0.8659 0.0474 0.0041 0.0154 20211316
+Cicada 15872097 15827740 15899699 0.0000 0.0000 0.0000 59 58.990 59.164 0.0390 0.8623 0.0506 0.0044 0.0120 0.0316 18249210 16704652 4672735
 Silo 16872997 16776026 17015948 0.0000 0.0000 0.0000 61 61.611 61.749 0.0408 0.8912 0.0368 0.0082 0 10792990

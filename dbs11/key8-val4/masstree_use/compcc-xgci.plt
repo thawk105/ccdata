@@ -1,9 +1,9 @@
 reset
 
-#set xlabel font "Courier,27"
-#set ylabel font "Courier,27"
-#set tics   font "Courier,27"
-#set key    font "Courier,27"
+#set xlabel font "Courier,17"
+#set ylabel font "Courier,17"
+#set tics   font "Courier,17"
+#set key    font "Courier,17"
 #set key spacing 1
 #
 #set xtics  offset 0,-1
@@ -55,7 +55,7 @@ plot \
 "result_cicada-ninline_ycsbA_tuple1m_gci10us-1s.dat" using 1:17 w errorlines pt 3 title "Memory allocation (no inlining)" axis x1y1 ,\
 "result_cicada-ninline_ycsbA_tuple1m_gci10us-1s.dat" using 1:18 w errorlines pt 4 title "Reuse (no inlining)" axis x1y1 ,\
 
-reset
+unset logscale x
 
 #set xlabel font "Courier,27"
 #set ylabel font "Courier,27"
@@ -88,7 +88,6 @@ set xlabel "GC interval[us]"
 
 set grid
 
-set terminal pdfcairo enhanced color size 10cm,10cm
 set output "comp_cicada_ycsbA_tuple1m_gci10us-1s_main-latency.pdf"
 set ylabel "Latency [ns]"
 set style histogram rowstacked
@@ -102,7 +101,6 @@ plot \
 "result_cicada_ycsbA_tuple1m_gci10us-1s.dat" using (i(h($2),$15)) w histogram title "GC latency",\
 "result_cicada_ycsbA_tuple1m_gci10us-1s.dat" using (j(h($2),i(h($2),$11),i(h($2),$12),i(h($2),$13),i(h($2),$14),i(h($2),$15))) w histogram title "other work"
 
-set terminal pdfcairo enhanced color size 10cm,10cm
 set output "comp_cicada-silo_ycsbA_tuple100m_gci10us_224th_main-latency.pdf"
 set ylabel "Latency [ns]"
 set style histogram rowstacked
@@ -116,7 +114,6 @@ plot \
 "result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$15)) w histogram title "GC latency",\
 "result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (j(h($2),i(h($2),$11),i(h($2),$12),i(h($2),$13),i(h($2),$14),i(h($2),$15))) w histogram title "other work",\
 
-set terminal pdfcairo enhanced color size 10cm,10cm
 set output "comp_cicada-silo_ycsbB_tuple100m_gci10us_224th_main-latency.pdf"
 set ylabel "Latency [ns]"
 set style histogram rowstacked
@@ -129,4 +126,28 @@ plot \
 "result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$14)) w histogram title "Validation latency",\
 "result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$15)) w histogram title "GC latency",\
 "result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (j(h($2),i(h($2),$11),i(h($2),$12),i(h($2),$13),i(h($2),$14),i(h($2),$15))) w histogram title "other work",\
+
+set output "comp_cicada-silo-part_ycsbA_tuple100m_gci10us_224th_main-latency.pdf"
+set ylabel "Latency [ns]"
+set style histogram rowstacked
+set boxwidth 0.5 relative
+set style fill solid border lc rgb "black"
+plot \
+"result_cicada-silo-part_ycsbA_tuple100m_224th.dat" using (i(h($2),$11)):xticlabels(1) w histogram title "Workload generation latency",\
+"result_cicada-silo-part_ycsbA_tuple100m_224th.dat" using (i(h($2),$12)) w histogram title "Read operation latency",\
+"result_cicada-silo-part_ycsbA_tuple100m_224th.dat" using (i(h($2),$13)) w histogram title "Write operation latency",\
+"result_cicada-silo-part_ycsbA_tuple100m_224th.dat" using (i(h($2),$14)) w histogram title "Validation latency",\
+"result_cicada-silo-part_ycsbA_tuple100m_224th.dat" using (i(h($2),$15)) w histogram title "other work",\
+
+set output "comp_cicada-silo-part_ycsbB_tuple100m_gci10us_224th_main-latency.pdf"
+set ylabel "Latency [ns]"
+set style histogram rowstacked
+set boxwidth 0.5 relative
+set style fill solid border lc rgb "black"
+plot \
+"result_cicada-silo-part_ycsbB_tuple100m_224th.dat" using (i(h($2),$11)):xticlabels(1) w histogram title "Workload generation latency",\
+"result_cicada-silo-part_ycsbB_tuple100m_224th.dat" using (i(h($2),$12)) w histogram title "Read operation latency",\
+"result_cicada-silo-part_ycsbB_tuple100m_224th.dat" using (i(h($2),$13)) w histogram title "Write operation latency",\
+"result_cicada-silo-part_ycsbB_tuple100m_224th.dat" using (i(h($2),$14)) w histogram title "Validation latency",\
+"result_cicada-silo-part_ycsbB_tuple100m_224th.dat" using (j(h($2),i(h($2),$11),i(h($2),$12),i(h($2),$13),i(h($2),$14),i(h($2),$15))) w histogram title "other work",\
 

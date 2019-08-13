@@ -1,0 +1,5 @@
+#tuple num, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss, avg-make_procedure_latency_rate, avg-read_latency_rate, avg-write_latency_rate, avg-vali_latency_rate avg-maxrss
+#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../silo.exe 100000000 10 224 95 off 0 on 2100 40 3
+Cicada 20027062 19788942 20220488 0.0000 0.0000 0.0000 75 75.867 76.030 0.0484 0.8616 0.0349 0.0010 0.0000 0.0539 17065114  
+Silo 19268506 19207610 19315766 0.0000 0.0000 0.0000 77 77.481 77.737 0.0462 0.8702 0.0352 0.0070 0.000 0.0412 10793001
+

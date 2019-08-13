@@ -142,7 +142,7 @@ set format y "%1.0f"
 set ylabel "Throughput (K tps)"
 unset yrange
 set format y "%2.0t{/Symbol \264}10^{%T}"
-set autoscale y
+set logscale y
 set output "comp_ycsbA_tuple1k_skew0-099_tps.pdf"
 plot \
 "result_cicada_ycsbA_tuple1k_skew0-099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 1 title "Cicada", \

@@ -17,7 +17,7 @@ reset
 
 set key outside horiz center box width 0.8 top
 
-set format y "%2.0t{/Symbol \264}10^{%T}"
+set format y "%2.1t{/Symbol \264}10^{%T}"
 #set format y "%1.1f"
 
 set notitle

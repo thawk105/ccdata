@@ -1,0 +1,8 @@
+#tuple num, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss
+#perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../ermia.exe  10 thread 50 off 0.9 on 2100 10 10000 3
+1000 14 14 15 1.0000 1.0000 1.0000 15 15.280 16.233
+10000 27 25 29 1.0000 1.0000 1.0000 19 17.585 21.936
+100000 47 47 48 1.0000 1.0000 1.0000 19 19.181 20.161
+1000000 78 74 83 1.0000 1.0000 1.0000 21 21.066 22.409
+10000000 113 109 120 1.0000 1.0000 1.0000 25 25.534 25.978
+100000000 156 145 166 0.9999 0.9999 1.0000 50 49.636 50.616

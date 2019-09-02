@@ -1,3 +1,3 @@
 #tuple num, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss, avg-make_procedure_latency_rate, avg-read_latency_rate, avg-write_latency_rate, avg-vali_latency_rate, avg-gc_latency_rate avg-other_work_latency_rate avg-maxrss version_malloc version_reuse
-#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../cicada.exe 100000000 10 224 50 off 0 on off off 2100 5 2 10 10000 3
-10 8749387 8196576 9107331 0.0000 0.0000 0.0000 57 57.426 58.128 0.0249 0.4038 0.4393 0.0167 0.0559 0.0591 21001340 30464944 67928373
+#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../cicada.exe 100000000 10 224 100 off 0 on off off 2100 5 2 100 10000 3
+10 8610307 6898802 9791077 0.0000 0.0000 0.0000 57 57.558 58.225 0.0239 0.9600 0.0000 0.0000 0.0000 0.0160 17043453  

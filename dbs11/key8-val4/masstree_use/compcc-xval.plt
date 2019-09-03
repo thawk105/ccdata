@@ -43,7 +43,7 @@ plot \
 "result_mocc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 4 title "SI", \
 "result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 6 title "Silo", \
-"result_ss2pl-dlr1_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 10 title "TicToc", \
 
 set output "comp_ycsbB_tuple100m_skew09_val4-1k_tps.pdf"
@@ -53,7 +53,7 @@ plot \
 "result_mocc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 4 title "SI", \
 "result_silo_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 6 title "Silo", \
-"result_ss2pl-dlr1_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 10 title "TicToc", \
 
 set output "comp_ycsbC_tuple100m_skew09_val4-1k_tps.pdf"
@@ -63,7 +63,7 @@ plot \
 "result_mocc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 4 title "SI", \
 "result_silo_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 6 title "Silo", \
-"result_ss2pl-dlr1_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:2:3:4 w errorlines pt 10 title "TicToc", \
 
 #set ylabel "Throughput (K tps)"
@@ -93,7 +93,7 @@ plot \
 "result_mocc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 4 title "SI", \
 "result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 6 title "Silo", \
-"result_ss2pl-dlr1_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc", \
 
 set output "comp_ycsbB_tuple100m_skew09_val4-1k_ar.pdf"
@@ -103,7 +103,7 @@ plot \
 "result_mocc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 4 title "SI", \
 "result_silo_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 6 title "Silo", \
-"result_ss2pl-dlr1_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc", \
 
 set output "comp_ycsbC_tuple100m_skew09_val4-1k_ar.pdf"
@@ -113,7 +113,7 @@ plot \
 "result_mocc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 4 title "SI", \
 "result_silo_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 6 title "Silo", \
-"result_ss2pl-dlr1_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc", \
 
 #set output "comp_ycsbA_tuple100m_skew09_val4-1k_silo&tictoc_ar.pdf"
@@ -131,7 +131,7 @@ plot \
 "result_mocc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC", \
 "result_si_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI", \
 "result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo", \
-"result_ss2pl-dlr1_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
 
 set output "comp_ycsbB_tuple100m_skew09_val4-1k_cm.pdf"
@@ -141,7 +141,7 @@ plot \
 "result_mocc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC", \
 "result_si_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI", \
 "result_silo_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo", \
-"result_ss2pl-dlr1_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
 
 set output "comp_ycsbC_tuple100m_skew09_val4-1k_cm.pdf"
@@ -151,7 +151,7 @@ plot \
 "result_mocc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC", \
 "result_si_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI", \
 "result_silo_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo", \
-"result_ss2pl-dlr1_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
 
 #set output "comp_ycsbA_tuple100m_skew09_val4-1k_silo&tictoc_cm.pdf"

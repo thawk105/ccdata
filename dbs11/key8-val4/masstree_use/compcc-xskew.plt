@@ -142,7 +142,7 @@ set format y "%1.0f"
 set ylabel "Throughput [tps]"
 unset yrange
 set format y "%2.0t{/Symbol \264}10^{%T}"
-set logscale y
+unset logscale y
 set output "comp_ycsbA_tuple1k_skew0-099_tps.pdf"
 plot \
 "result_cicada_ycsbA_tuple1k_skew0-099.dat" using 1:2:3:4 w errorlines pt 1 title "Cicada", \
@@ -183,7 +183,7 @@ set format y "%1.0f"
 set ylabel "Throughput [tps]"
 unset yrange
 set format y "%2.0t{/Symbol \264}10^{%T}"
-set logscale y
+unset logscale y
 set output "comp_ycsbB_tuple1k_skew0-099_tps.pdf"
 plot \
 "result_cicada_ycsbB_tuple1k_skew0-099.dat" using 1:2:3:4 w errorlines pt 1 title "Cicada", \
@@ -259,4 +259,44 @@ plot \
 "result_silo_ycsbC_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "Silo", \
 "result_ss2pl_ycsbC_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "SS2PL", \
 "result_tictoc_ycsbC_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 12 title "TicToc", \
+
+set format y "%1.0f"
+set ylabel "Throughput [tps]"
+unset yrange
+set format y "%2.0t{/Symbol \264}10^{%T}"
+unset logscale y
+set output "comp_r100_tuple1k_skew0-099_tps.pdf"
+plot \
+"result_cicada_r100_tuple1k_skew0-099.dat" using 1:2:3:4 w errorlines pt 1 title "Cicada", \
+"result_ermia_r100_tuple1k_skew0-099.dat" using 1:2:3:4 w errorlines pt 2 title "ERMIA", \
+"result_mocc_r100_tuple1k_skew0-099.dat" using 1:2:3:4 w errorlines pt 4 title "MOCC", \
+"result_si_r100_tuple1k_skew0-099.dat" using 1:2:3:4 w errorlines pt 6 title "SI", \
+"result_silo_r100_tuple1k_skew0-099.dat" using 1:2:3:4 w errorlines pt 8 title "Silo", \
+"result_ss2pl_r100_tuple1k_skew0-099.dat" using 1:2:3:4 w errorlines pt 10 title "SS2PL", \
+"result_tictoc_r100_tuple1k_skew0-099.dat" using 1:2:3:4 w errorlines pt 12 title "TicToc", \
+
+set ylabel "Abort Rate"
+set format y "%1.2f"
+set yrange [0:1]
+
+set output "comp_r100_tuple1k_skew0-099_ar.pdf"
+plot \
+"result_cicada_r100_tuple1k_skew0-099.dat" using 1:5:6:7 w errorlines pt 1 title "Cicada", \
+"result_ermia_r100_tuple1k_skew0-099.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA", \
+"result_mocc_r100_tuple1k_skew0-099.dat" using 1:5:6:7 w errorlines pt 4 title "MOCC", \
+"result_si_r100_tuple1k_skew0-099.dat" using 1:5:6:7 w errorlines pt 6 title "SI", \
+"result_silo_r100_tuple1k_skew0-099.dat" using 1:5:6:7 w errorlines pt 8 title "Silo", \
+"result_ss2pl_r100_tuple1k_skew0-099.dat" using 1:5:6:7 w errorlines pt 10 title "SS2PL", \
+"result_tictoc_r100_tuple1k_skew0-099.dat" using 1:5:6:7 w errorlines pt 12 title "TicToc", \
+
+set output "comp_r100_tuple1k_skew0-099_cm.pdf"
+set ylabel "Cache-Miss Rate"
+plot \
+"result_cicada_r100_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada", \
+"result_ermia_r100_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA", \
+"result_mocc_r100_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "MOCC", \
+"result_si_r100_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "SI", \
+"result_silo_r100_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "Silo", \
+"result_ss2pl_r100_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "SS2PL", \
+"result_tictoc_r100_tuple1k_skew0-099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 12 title "TicToc", \
 

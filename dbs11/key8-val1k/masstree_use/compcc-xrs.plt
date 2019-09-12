@@ -21,7 +21,7 @@ g(a) = a / 1e2
 set key outside horiz center top box
 
 set format x "10^{%T}"
-set xlabel "Database Size"
+set xlabel "# records"
 set autoscale y
 set logscale x
 

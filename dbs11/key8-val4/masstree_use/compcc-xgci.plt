@@ -106,6 +106,7 @@ set output "comp_cicada-silo_ycsbA_tuple100m_gci10us_224th_main-latency.pdf"
 set style histogram rowstacked
 set boxwidth 0.5 relative
 set style fill solid border lc rgb "black"
+set yrange [0:120]
 plot \
 "result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$11)):xticlabels(1) w histogram title "Workload generation",\
 "result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$12)) w histogram title "Read operation",\

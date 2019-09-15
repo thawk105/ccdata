@@ -7,7 +7,7 @@ reset
 set key spacing 1
 
 #set xtics  offset 0,-1
-#set xlabel offset 0,-2
+set ylabel offset -1,0
 #set ylabel offset -5,0
 #
 #set tmargin 4
@@ -27,9 +27,44 @@ set grid
 
 set xrange [10:90]
 
-set terminal pdfcairo enhanced color size 5cm,5cm
-#set format y "%1.0t{/Symbol \264}10^{%T}"
-set format y "%g"
+set terminal pdfcairo enhanced color size 6cm,6cm
+set format y "%1.0t{/Symbol \264}10^{%T}"
+#set format y "%g"
+set ylabel "Throughput [tps]"
+set output "comp_tuple1k_rratio10-90_tps.pdf"
+plot \
+"result_cicada_tuple1k_rratio10-90.dat" using 1:2:3:4 w errorlines pt 1 title "Cicada" ,\
+"result_ermia_tuple1k_rratio10-90.dat" using 1:2:3:4 w errorlines pt 2 title "ERMIA" ,\
+"result_mocc_tuple1k_rratio10-90.dat" using 1:2:3:4 w errorlines pt 3 title "MOCC" ,\
+"result_si_tuple1k_rratio10-90.dat" using 1:2:3:4 w errorlines pt 4 title "SI" ,\
+"result_silo_tuple1k_rratio10-90.dat" using 1:2:3:4 w errorlines pt 6 title "Silo" ,\
+"result_ss2pl_tuple1k_rratio10-90.dat" using 1:2:3:4 w errorlines pt 8 title "SS2PL" ,\
+"result_tictoc_tuple1k_rratio10-90.dat" using 1:2:3:4 w errorlines pt 8 title "TicToc" ,\
+ 
+set ylabel "Abort Rate"
+set format y "%1.2f"
+set yrange [0:1]
+set output "comp_tuple1k_rratio10-90_ar.pdf"
+plot \
+"result_cicada_tuple1k_rratio10-90.dat" using 1:5:6:7 w errorlines pt 1 title "Cicada" ,\
+"result_ermia_tuple1k_rratio10-90.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA" ,\
+"result_mocc_tuple1k_rratio10-90.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC" ,\
+"result_si_tuple1k_rratio10-90.dat" using 1:5:6:7 w errorlines pt 4 title "SI" ,\
+"result_silo_tuple1k_rratio10-90.dat" using 1:5:6:7 w errorlines pt 6 title "Silo" ,\
+"result_ss2pl_tuple1k_rratio10-90.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL" ,\
+"result_tictoc_tuple1k_rratio10-90.dat" using 1:5:6:7 w errorlines pt 8 title "TicToc" ,\
+
+set ylabel "Cache-Miss Rate"
+set output "comp_tuple1k_rratio10-90_cr.pdf"
+plot \
+"result_cicada_tuple1k_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada" ,\
+"result_ermia_tuple1k_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA" ,\
+"result_mocc_tuple1k_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC" ,\
+"result_si_tuple1k_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI" ,\
+"result_silo_tuple1k_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo" ,\
+"result_ss2pl_tuple1k_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL" ,\
+"result_tictoc_tuple1k_rratio10-90.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "TicToc" ,\
+
 set ylabel "Throughput (M tps)"
 set autoscale y
 set yrange [0:50]

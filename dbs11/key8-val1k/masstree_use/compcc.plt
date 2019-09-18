@@ -62,3 +62,16 @@ plot \
 "result_ss2pl_ycsbC_tuple1g_skew09_val1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
 "result_tictoc_ycsbC_tuple1g_skew09_val1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
 
+unset yrange
+set format y "%1.0t{/Symbol \264}10^{%T}"
+set ylabel "Throughput (tps)"
+set xrange [1:81]
+set output "comp_tuple10m_val1k_ycsbC_tps.pdf"
+plot \
+"result_silo_ycsbC_tuple10m_ope2.dat" using 1:2:3:4 w errorlines pt 1 title "Silo", \
+"result_tictoc_ycsbC_tuple10m_ope2.dat" using 1:2:3:4 w errorlines pt 2 title "TicToc", \
+
+set output "comp_tuple10m_val1k_ycsb_medium_tps.pdf"
+plot \
+"result_silo_ycsb_tuple10m_skew08.dat" using 1:2:3:4 w errorlines pt 1 title "Silo", \
+"result_tictoc_ycsb_tuple10m_skew08.dat" using 1:2:3:4 w errorlines pt 2 title "TicToc", \

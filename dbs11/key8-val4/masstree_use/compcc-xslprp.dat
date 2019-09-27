@@ -37,6 +37,7 @@ set output "comp_ycsbA_tuple100m_skew09_slprp0-1000_tps.pdf"
 plot \
 "result_tictoc_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:2:3:4 w errorlines pt 1 title "TicToc" ,\
 "result_silo_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:2:3:4 w errorlines pt 2 title "Silo" ,\
+"result_silo+no-wait_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:2:3:4 w errorlines pt 3 title "Silo + No-wait" ,\
 
 set ylabel "Abort Rate"
 set format y "%1.2f"
@@ -45,6 +46,7 @@ set output "comp_ycsbA_tuple100m_skew09_slprp0-1000_ar.pdf"
 plot \
 "result_tictoc_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:5:6:7 w errorlines pt 1 title "TicToc" ,\
 "result_silo_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:5:6:7 w errorlines pt 2 title "Silo" ,\
+"result_silo+no-wait_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:5:6:7 w errorlines pt 3 title "Silo + No-wait" ,\
 
 set xtics
 set ylabel "Cache-Miss Rate"
@@ -52,4 +54,5 @@ set output "comp_ycsbA_tuple100m_skew09_slprp0-1000_ca.pdf"
 plot \
 "result_tictoc_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "TicToc" ,\
 "result_silo_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "Silo" ,\
+"result_silo+no-wait_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "Silo + No-wait" ,\
 

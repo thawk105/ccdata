@@ -27,7 +27,7 @@ set xlabel "# Threads"
 set autoscale y
 set autoscale x
 
-set terminal pdfcairo enhanced color size 5cm,5cm
+set terminal pdfcairo enhanced color size 6cm,6cm
 unset yrange
 set format y "%1.0t{/Symbol \264}10^{%T}"
 set ylabel "Throughput (tps)"
@@ -80,3 +80,4 @@ set output "comp_tuple10m_val1k_ycsb_high_tps.pdf"
 plot \
 "result_silo_ycsb_tuple10m_skew09.dat" using 1:2:3:4 w errorlines pt 1 title "Silo", \
 "result_tictoc_ycsb_tuple10m_skew09.dat" using 1:2:3:4 w errorlines pt 2 title "TicToc", \
+"result_tictoc+backoff_ycsb_tuple10m_skew09.dat" using 1:2:3:4 w errorlines pt 3 title "TicToc + Backoff opt", \

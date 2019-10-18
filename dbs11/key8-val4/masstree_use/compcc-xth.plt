@@ -23,19 +23,21 @@ set key outside horiz center top box
 set autoscale x
 #set format x "%1.1t{/Symbol \264}10^{%T}"
 #set format x "10^{%T}"
-set xlabel "# threads"
+set xlabel "# Threads"
 set xtics 28, 28, 224
 set grid
 
-set terminal pdfcairo enhanced color size 6cm,6cm
-set format y "%1.1t{/Symbol \264}10^{%T}"
-set ylabel "Throughput"
+set ytics 30
+set terminal pdfcairo enhanced color size 5cm,4cm
+set format y "%1.0f"
+set ylabel "Throughput [MTPS]"
 set autoscale y
 set output "comp_ycsbC_tuple50_tps.pdf"
 plot \
-"result_mocc_ycsbC_tuple50.dat" using 1:2:3:4 w errorlines pt 1 title "MOCC" ,\
-"result_silo_ycsbC_tuple50.dat" using 1:2:3:4 w errorlines pt 2 title "Silo" ,\
+"result_mocc_ycsbC_tuple50.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "MOCC" ,\
+"result_silo_ycsbC_tuple50.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "Silo" ,\
 
+set ytics 0.2 
 set ylabel "Abort Rate"
 set format y "%1.2f"
 set yrange [0:1]

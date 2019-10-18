@@ -8,7 +8,7 @@ reset
 #
 #set xtics  offset 0,-1
 #set xlabel offset 0,-2
-set ylabel offset -1,0
+#set ylabel offset -1,0
 #
 #set tmargin 8
 #set lmargin 20 
@@ -25,19 +25,19 @@ set grid
 #set format x "10^{%T}"
 
 set autoscale x
-set xlabel "# clocks of sleep in read phase."
+set xlabel "# Clocks of Sleep in Read Phase"
 
 set terminal pdfcairo enhanced color size 5cm,5cm
 #set format x "%1.0t{/Symbol \264}10^{%T}"
 set xtics 0, 10000, 25000
-set format y "%1.1t{/Symbol \264}10^{%T}"
-set ylabel "Throughput"
+#set format y "%1.1t{/Symbol \264}10^{%T}"
+set ylabel "Throughput [MTPS]"
 set autoscale y
 set output "comp_ycsbA_tuple100m_skew09_slprp0-1000_tps.pdf"
 plot \
-"result_tictoc_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:2:3:4 w errorlines pt 1 title "TicToc" ,\
-"result_silo_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:2:3:4 w errorlines pt 2 title "Silo" ,\
-"result_silo+no-wait_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:2:3:4 w errorlines pt 3 title "Silo + No-wait" ,\
+"result_tictoc_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:(f($2)) w lines title "TicToc" ,\
+"result_silo_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:(f($2)) w lines title "Silo" ,\
+"result_silo+no-wait_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:(f($2)) w lines title "Silo + No-wait"
 
 set ylabel "Abort Rate"
 set format y "%1.2f"

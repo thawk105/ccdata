@@ -8,7 +8,7 @@ reset
 #
 #set xtics  offset 0,-1
 #set xlabel offset 0,-2
-set ylabel offset -1,0
+#set ylabel offset -1,0
 #
 #set tmargin 8
 #set lmargin 20 
@@ -26,7 +26,7 @@ set xlabel "GC interval[us]"
 
 set grid
 
-set terminal pdfcairo enhanced color size 10cm,10cm
+set terminal pdfcairo enhanced color size 5cm,5cm
 set format y "%1.1t{/Symbol \264}10^{%T}"
 set format y2 "%1.1t{/Symbol \264}10^{%T}"
 set ylabel "Throughput [tps]"

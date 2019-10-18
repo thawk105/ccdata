@@ -83,8 +83,9 @@ plot \
 "result_ss2pl-dlr0_ycsbB_tuple100m_skew06-085.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "SS2PL - Normal", \
 "result_ss2pl_ycsbB_tuple100m_skew06-085.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "SS2PL - No Wait", \
 
+set ytics 0.2
 set ylabel "Abort Ratio"
-set format y "%1.2f"
+set format y "%1.1f"
 set yrange [0:1]
 set output "comp_ycsbB_tuple100m_skew06-085_ar.pdf"
 plot \

@@ -1,7 +1,7 @@
 set xlabel "# Threads"
 #set xlabel offset 0,0.3
 
-set ylabel "Throughput [MOPS/SEC]"
+set ylabel "[MOPS/SEC]"
 #set ylabel offset -2.5,0
 
 #set xlabel font "Courier,12"
@@ -25,12 +25,15 @@ f(a) = a / 1e2
 g(a) = a / 1e6
 
 set autoscale y
+unset key
+set ytics 30
 #set format y "%2.1t{/Symbol \264}10^{%T}"
-set terminal pdfcairo enhanced color size 5cm,4cm
+set terminal pdfcairo enhanced color size 5cm,3cm
 set output "fetch_add_tps.pdf"
 plot \
  "fetch_add.dat" using 1:(g($2)) w lp title "fetch\\_add", \
 
+set ytics 0.1
 unset logscale y
 set format y "%1.2f"
 set ylabel "Cache-Miss Ratio"

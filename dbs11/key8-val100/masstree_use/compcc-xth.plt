@@ -19,7 +19,6 @@ f(a) = a / 1e6
 g(a) = a / 1e2
 h(a) = a / 1e3
 
-set key outside horiz center top box
 
 set autoscale x
 #set format x "%1.1t{/Symbol \264}10^{%T}"
@@ -27,10 +26,11 @@ set autoscale x
 set xlabel "# Threads"
 set grid
 
-set terminal pdfcairo enhanced color size 5cm,4cm
+set key outside horiz center top box 
+set terminal pdfcairo enhanced color size 5cm,5cm
 set format y "%1.0f"
 set ytics 60
-set ylabel "Throughput [KTPS]" offset -1,0
+set ylabel "Throughput [KTPS]" offset -1,-1
 set autoscale y
 set output "comp_ycsbA_tuple10m_ope16_rmw_skew099_tps.pdf"
 plot \
@@ -38,8 +38,8 @@ plot \
 "result_ermia_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 2 title "ERMIA" ,\
 "result_mocc_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 4 title "SI" ,\
-"result_silo_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 8 title "SS2PL" ,\
+"result_silo_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 6 title "Silo",\
+"result_ss2pl_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 10 title "TicToc" ,\
 
 set ytics 0.2
@@ -53,7 +53,7 @@ plot \
 "result_mocc_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 4 title "SI" ,\
 "result_silo_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL" ,\
+"result_ss2pl_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc" ,\
 
 set xtics
@@ -65,7 +65,7 @@ plot \
 "result_mocc_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI" ,\
 "result_silo_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL" ,\
+"result_ss2pl_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbA_tuple10m_ope16_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc" ,\
 
 set ytics 10
@@ -79,7 +79,7 @@ plot \
 "result_mocc_ycsbC_tuple10m_ope1_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbC_tuple10m_ope1_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "SI" ,\
 "result_silo_ycsbC_tuple10m_ope1_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbC_tuple10m_ope1_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "SS2PL" ,\
+"result_ss2pl_ycsbC_tuple10m_ope1_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbC_tuple10m_ope1_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc" ,\
 
 set ytics 0.2
@@ -93,7 +93,7 @@ plot \
 "result_mocc_ycsbC_tuple10m_ope1_skew099.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbC_tuple10m_ope1_skew099.dat" using 1:5:6:7 w errorlines pt 4 title "SI" ,\
 "result_silo_ycsbC_tuple10m_ope1_skew099.dat" using 1:5:6:7 w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbC_tuple10m_ope1_skew099.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL" ,\
+"result_ss2pl_ycsbC_tuple10m_ope1_skew099.dat" using 1:5:6:7 w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbC_tuple10m_ope1_skew099.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc" ,\
 
 set xtics
@@ -105,7 +105,7 @@ plot \
 "result_mocc_ycsbC_tuple10m_ope1_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbC_tuple10m_ope1_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI" ,\
 "result_silo_ycsbC_tuple10m_ope1_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbC_tuple10m_ope1_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL" ,\
+"result_ss2pl_ycsbC_tuple10m_ope1_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbC_tuple10m_ope1_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc" ,\
 
 set ytics 20
@@ -119,7 +119,7 @@ plot \
 "result_mocc_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "SI" ,\
 "result_silo_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "SS2PL" ,\
+"result_ss2pl_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc" ,\
 
 set ytics 0.2
@@ -133,7 +133,7 @@ plot \
 "result_mocc_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 4 title "SI" ,\
 "result_silo_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL" ,\
+"result_ss2pl_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc" ,\
 
 set xtics
@@ -145,6 +145,6 @@ plot \
 "result_mocc_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI" ,\
 "result_silo_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL" ,\
+"result_ss2pl_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbB_tuple10m_ope1_rmw_skew099.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc" ,\
 

@@ -8,14 +8,12 @@ reset
 #
 #set xtics  offset 0,-1
 #set xlabel offset 0,-3
-set ylabel offset -1,0
+#set ylabel offset -1,0
 #
 #set tmargin 12
 #set lmargin 18
 #set bmargin 8
 #set rmargin 5
-
-set key outside horiz center box top
 
 #set format y "%1.1f"
 
@@ -30,6 +28,7 @@ h(a) = a / 1e6
 
 set ytics autofreq
 
+set key center out top box horiz 
 set autoscale x
 set xlabel "Payload Size"
 set xtics ('4' 4, '200' 200, '400' 400, '600' 600, '800' 800, '1000' 1000)
@@ -44,18 +43,18 @@ plot \
 "result_mocc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 3 title "MOCC", \
 "result_si_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 4 title "SI", \
 "result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 10 title "TicToc", \
 
 set output "comp_ycsbB_tuple100m_skew09_val4-1k_tps.pdf"
 plot \
 "result_cicada_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 1 title "Cicada", \
 "result_ermia_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 2 title "ERMIA", \
-"result_mocc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 3 title "MOCC", \
-"result_si_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 4 title "SI", \
-"result_silo_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 8 title "SS2PL", \
-"result_tictoc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 10 title "TicToc", \
+"result_mocc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 3 title "MOCC",\
+"result_si_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 4 title "SI",\
+"result_silo_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 6 title "Silo",\
+"result_ss2pl_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 8 title "2PL",\
+"result_tictoc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 10 title "TicToc",\
 
 set logscale x
 set output "comp_ycsbB_tuple1m_val10-100k_tps.pdf"
@@ -65,20 +64,20 @@ plot \
 "result_mocc_ycsbB_tuple1m_val10-100k.dat" using 1:2:3:4 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbB_tuple1m_val10-100k.dat" using 1:2:3:4 w errorlines pt 4 title "SI", \
 "result_silo_ycsbB_tuple1m_val10-100k.dat" using 1:2:3:4 w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbB_tuple1m_val10-100k.dat" using 1:2:3:4 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbB_tuple1m_val10-100k.dat" using 1:2:3:4 w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbB_tuple1m_val10-100k.dat" using 1:2:3:4 w errorlines pt 10 title "TicToc", \
 
 unset logscale x
 
 set output "comp_ycsbC_tuple100m_skew09_val4-1k_tps.pdf"
 plot \
-"result_cicada_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 1 title "Cicada", \
-"result_ermia_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 2 title "ERMIA", \
+"result_cicada_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 1 title "Cicada",\
+"result_ermia_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 2 title "ERMIA",\
 "result_mocc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 3 title "MOCC", \
 "result_si_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 4 title "SI", \
-"result_silo_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 8 title "SS2PL", \
-"result_tictoc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 10 title "TicToc", \
+"result_silo_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 6 title "Silo",\
+"result_ss2pl_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 8 title "2PL",\
+"result_tictoc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 10 title "TicToc",\
 
 #set ylabel "Throughput (K tps)"
 #set autoscale y
@@ -89,12 +88,13 @@ plot \
 #"result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "TicToc-nw", \
 #"result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "TicToc-nw-ea", \
 
-set ylabel "# Extra Reads [/SEC]"
+set ylabel "Extra Reads [/SEC]"
 set autoscale y
+set ytics 10
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_er.pdf"
 plot \
-"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($11)) w errorlines pt 6 title "Silo", \
-"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($11)) w errorlines pt 10 title "TicToc", \
+"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($11)) w errorlines pt 1 title "Silo", \
+"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(h($11)) w errorlines pt 2 title "TicToc", \
 
 set ylabel "Abort Ratio"
 set format y "%1.1f"
@@ -108,7 +108,7 @@ plot \
 "result_mocc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 4 title "SI", \
 "result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc", \
 
 set output "comp_ycsbB_tuple100m_skew09_val4-1k_ar.pdf"
@@ -118,7 +118,7 @@ plot \
 "result_mocc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 4 title "SI", \
 "result_silo_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc", \
 
 set logscale x
@@ -129,7 +129,7 @@ plot \
 "result_mocc_ycsbB_tuple1m_val10-100k.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbB_tuple1m_val10-100k.dat" using 1:5:6:7 w errorlines pt 4 title "SI", \
 "result_silo_ycsbB_tuple1m_val10-100k.dat" using 1:5:6:7 w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbB_tuple1m_val10-100k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbB_tuple1m_val10-100k.dat" using 1:5:6:7 w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbB_tuple1m_val10-100k.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc", \
 
 unset logscale x
@@ -141,7 +141,7 @@ plot \
 "result_mocc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC", \
 "result_si_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 4 title "SI", \
 "result_silo_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc", \
 
 #set output "comp_ycsbA_tuple100m_skew09_val4-1k_silo&tictoc_ar.pdf"
@@ -159,7 +159,7 @@ plot \
 "result_mocc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC", \
 "result_si_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI", \
 "result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
 
 set output "comp_ycsbB_tuple100m_skew09_val4-1k_cm.pdf"
@@ -169,7 +169,7 @@ plot \
 "result_mocc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC", \
 "result_si_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI", \
 "result_silo_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbB_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
 
 set logscale x
@@ -180,19 +180,19 @@ plot \
 "result_mocc_ycsbB_tuple1m_val10-100k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC", \
 "result_si_ycsbB_tuple1m_val10-100k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI", \
 "result_silo_ycsbB_tuple1m_val10-100k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbB_tuple1m_val10-100k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbB_tuple1m_val10-100k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbB_tuple1m_val10-100k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
 
 unset logscale x
-
+set ytics 0.2
 set output "comp_ycsbC_tuple100m_skew09_val4-1k_cm.pdf"
 plot \
-"result_cicada_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada", \
-"result_ermia_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA", \
-"result_mocc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC", \
-"result_si_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI", \
+"result_cicada_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Cicada",\
+"result_ermia_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "ERMIA",\
+"result_mocc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "MOCC",\
+"result_si_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 4 title "SI",\
 "result_silo_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "SS2PL", \
+"result_ss2pl_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 8 title "2PL", \
 "result_tictoc_ycsbC_tuple100m_skew09_val4-1k.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc", \
 
 #set output "comp_ycsbA_tuple100m_skew09_val4-1k_silo&tictoc_cm.pdf"

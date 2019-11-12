@@ -27,7 +27,7 @@ set xlabel "Skew"
 set grid
 
 set xtics ('0' 0, '0.2' 0.2, '0.4' 0.4, '0.6' 0.6, '0.8' 0.8, '0.99' 0.99)
-set terminal pdfcairo enhanced color size 5cm,4cm
+set terminal pdfcairo enhanced color size 5cm,5cm
 set format y "%1.1f"
 set ytics 0.5
 set ylabel "Throughput [MTPS]"
@@ -38,9 +38,9 @@ plot \
 "result_ermia_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "ERMIA" ,\
 "result_mocc_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "SI" ,\
-"result_silo_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "SS2PL" ,\
-"result_tictoc_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc" ,\
+"result_silo_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo",\
+"result_ss2pl_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "2PL" ,\
+"result_tictoc_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc"
 
 set ytics 0.2
 set ylabel "Abort Ratio"
@@ -78,9 +78,9 @@ plot \
 "result_ermia_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "ERMIA" ,\
 "result_mocc_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "MOCC" ,\
 "result_si_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "SI" ,\
-"result_silo_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "SS2PL" ,\
-"result_tictoc_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc" ,\
+"result_silo_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo",\
+"result_ss2pl_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "2PL" ,\
+"result_tictoc_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc"
 
 set ytics 0.2
 set ylabel "Abort Ratio"

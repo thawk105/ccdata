@@ -88,7 +88,7 @@ plot \
 #"result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "TicToc-nw", \
 #"result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "TicToc-nw-ea", \
 
-set ylabel "Extra Reads [/SEC]"
+set ylabel "Extra Reads [Millions/SEC]"
 set autoscale y
 set ytics 10
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_er.pdf"

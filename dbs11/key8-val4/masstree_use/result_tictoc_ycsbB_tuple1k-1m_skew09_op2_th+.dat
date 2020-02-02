@@ -1,0 +1,7 @@
+#worker threads, avg-tps, min-tps, max-tps, avg-ar, min-ar, max-ar, avg-camiss, min-camiss, max-camiss
+#sudo perf stat -e cache-misses,cache-references -o ana.txt numactl --interleave=all ../tictoc.exe tuple 2 224 95 off 0.9 on 2100 3
+#ShowOptParameters(): KEY_SIZE 8: VAL_SIZE 4: ADD_ANALYSIS 1: BACK_OFF 0: MASSTREE_USE 1: NO_WAIT_LOCKING_IN_VALIDATION 1: PREEMPTIVE_ABORTS 1: TIMESTAMP_HISTORY 1
+1000 16653516 16476844 16939932 0.4886 0.4848 0.4937, 44 44.767 44.824
+10000 29447734 28639958 29929643 0.3204 0.3125 0.3245, 29 29.717 29.877
+100000 50490473 49889938 50951832 0.1837 0.1802 0.1856, 24 24.264 24.540
+1000000 101211738 99987819 102139702 0.0564 0.0552 0.0575, 21 21.098 21.287

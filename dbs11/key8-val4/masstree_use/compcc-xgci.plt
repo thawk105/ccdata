@@ -15,14 +15,14 @@ reset
 #set bmargin 7
 #set rmargin 7
 
-f(a) = a / 1e6
-g(a) = a / 1e2
+m(a) = a / 1e6
+h(a) = a / 1e2
 
 set key outside horiz center top box
 
 #set format x "%1.0t{/Symbol \264}10^{%T}"
 set format x "10^{%T}"
-set xlabel "GC interval[us]"
+set xlabel "GC Interval[us]"
 
 set grid
 
@@ -44,17 +44,61 @@ plot \
 "result_cicada-ninline_ycsbA_tuple1m_gci10us-1s.dat" using 1:2:3:4 w errorlines pt 1 title "Throughput (no inlining)" axis x1y1 ,\
 "result_cicada-ninline_ycsbA_tuple1m_gci10us-1s.dat" using 1:16 w lp pt 2 title "Memory consumption (no inlining)" axis x1y2 ,\
 
-set format y "%1.1t{/Symbol \264}10^{%T}"
-set ylabel "# Version allocation"
 unset y2tics
 unset y2label
-set output "comp_cicada-inline_ycsbA_tuple1m_gci10us-1s_version-allocation.pdf"
+set ytics auto
+set output "comp_cicada-inline_ycsbA_tuple1m_gci1us-1s_tps.pdf"
+plot \
+"result_cicada_ycsbA_tuple1m_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 1 title "inlining" axis x1y1 ,\
+"result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 2 title "no inlining" axis x1y1 ,\
+#"result_cicada_ycsbA_tuple1m_prv100k_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 1 title "inlining+prv" axis x1y1 ,\
+
+set ylabel "Max resident set size [KB]"
+set output "comp_cicada-inline_ycsbA_tuple1m_gci1us-1s_mr.pdf"
+plot \
+"result_cicada_ycsbA_tuple1m_gci1us-1s.dat" using 1:17 w lp pt 1 title "inlining",\
+"result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:17 w lp pt 2 title "no inlining",\
+
+set format y "%1.1t{/Symbol \264}10^{%T}"
+set ylabel "# Version allocation"
+set output "comp_cicada-inline_ycsbA_tuple1m_gci10us-1s_va.pdf"
 plot \
 "result_cicada_ycsbA_tuple1m_gci10us-1s.dat" using 1:17 w lp pt 1 title "Memory allocation" axis x1y1 ,\
 "result_cicada_ycsbA_tuple1m_gci10us-1s.dat" using 1:18 w lp pt 2 title "Reuse" axis x1y1 ,\
 "result_cicada-ninline_ycsbA_tuple1m_gci10us-1s.dat" using 1:17 w errorlines pt 3 title "Memory allocation (no inlining)" axis x1y1 ,\
 "result_cicada-ninline_ycsbA_tuple1m_gci10us-1s.dat" using 1:18 w errorlines pt 4 title "Reuse (no inlining)" axis x1y1 ,\
 
+set autoscale y
+set ylabel "# Version Reuse"
+set ylabel offset -1, 0
+set output "comp_cicada-inline_ycsbA_tuple1m_gci1us-1s_vr.pdf"
+plot \
+"result_cicada_ycsbA_tuple1m_gci1us-1s.dat" using 1:19 w lp pt 1 title "inlining",\
+"result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:19 w errorlines pt 3 title "no inlining",\
+#"result_cicada_ycsbA_tuple1m_prv100k_gci1us-1s.dat" using 1:19 w lp pt 2 title "inlining+prv",\
+
+set ylabel "# Version Allocation"
+set output "comp_cicada-inline_ycsbA_tuple1m_gci1us-1s_va.pdf"
+plot \
+"result_cicada_ycsbA_tuple1m_gci1us-1s.dat" using 1:18 w lp pt 1 title "inlining",\
+"result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:18 w errorlines pt 2 title "no inlining",\
+
+set yrange [0:1]
+set ytics auto
+set ylabel "Cache-Miss Rate"
+set format y "%1.1f"
+set output "comp_cicada-inline_ycsbA_tuple1m_gci1us-1s_cr.pdf"
+plot \
+"result_cicada_ycsbA_tuple1m_gci1us-1s.dat" using 1:(h($8)):(h($9)):(h($10)) w errorlines pt 1 title "inlining" axis x1y1 ,\
+"result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:(h($8)):(h($9)):(h($10)) w errorlines pt 2 title "no inlining" axis x1y1 ,\
+
+set ylabel "Abort Rate"
+set output "comp_cicada-inline_ycsbA_tuple1m_gci1us-1s_ar.pdf"
+plot \
+"result_cicada_ycsbA_tuple1m_gci1us-1s.dat" using 1:5:6:7 w errorlines pt 1 title "inlining" axis x1y1 ,\
+"result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:5:6:7 w errorlines pt 2 title "no inlining" axis x1y1 ,\
+
+unset yrange
 unset logscale x
 
 #set xlabel font "Courier,27"
@@ -72,8 +116,6 @@ unset logscale x
 #set bmargin 7
 #set rmargin 7
 
-f(a) = a / 1e6
-g(a) = a / 1e2
 h(a) = 1000000000 / a
 i(a,b) = a * b
 j(a,b,c,d,e,f) = a - b - c - d - e - f

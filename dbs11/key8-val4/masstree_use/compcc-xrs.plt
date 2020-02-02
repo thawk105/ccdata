@@ -31,6 +31,15 @@ set terminal pdfcairo enhanced color size 5cm,5cm
 #set format y "%1.1t{/Symbol \264}10^{%T}"
 set ylabel "Throughput [MTPS]"
 set autoscale y
+
+set ylabel offset -1,0
+set ylabel "Throughput [MTPS]"
+set format y "%1.1t{/Symbol \264}10^{%T}"
+set output "comp_tictoc_ycsbB_tuple1k-1m_skew09_op2_th_tps.pdf"
+plot \
+"result_tictoc_ycsbB_tuple1k-1m_skew09_op2_th+.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "TicToc+TH" ,\
+"result_tictoc_ycsbB_tuple1k-1m_skew09_op2_th-.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc-TH" ,\
+
 set ytics 10
 set output "comp_tuple1k-1g_ycsbA_tps.pdf"
 plot \
@@ -98,6 +107,11 @@ plot \
 "result_silo_ycsbC_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 6 title "Silo" ,\
 "result_ss2pl_ycsbC_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 8 title "2PL" ,\
 "result_tictoc_ycsbC_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 10 title "TicToc" ,\
+
+set output "comp_tictoc_ycsbB_tuple1k-1m_skew09_op2_th_ar.pdf"
+plot \
+"result_tictoc_ycsbB_tuple1k-1m_skew09_op2_th+.dat" using 1:5:6:7 w errorlines pt 1 title "TicToc+TH" ,\
+"result_tictoc_ycsbB_tuple1k-1m_skew09_op2_th-.dat" using 1:5:6:7 w errorlines pt 2 title "TicToc-TH" ,\
 
 set xtics
 set ylabel "Cache-Miss Ratio"

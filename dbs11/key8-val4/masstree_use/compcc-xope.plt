@@ -60,3 +60,22 @@ plot \
 "result_ss2pl-dlr0_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "2PL-Wait", \
 "result_ss2pl-dlr1_ycsbB_tuple100m_skew08_ope10-100.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 3 title "2PL-NoWait", \
 
+set ylabel "Throughput [ops/trans]"
+set output "comp_ycsbB_tuple1m_skew09_ope2-64_th.pdf"
+set format y "%2.0t{/Symbol \264}10^{%T}"
+set logscale y
+set xrange [2:64]
+unset yrange
+plot \
+"result_tictoc_ycsbB_tuple1m_skew09_ope2-64_th+.dat"using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 1 title "TicToc+TH", \
+"result_tictoc_ycsbB_tuple1m_skew09_ope2-64_th-.dat"using 1:(h($2)):(h($3)):(h($4)) w errorlines pt 2 title "TicToc-TH", \
+
+set ylabel "Abort Ratio"
+set format y "%1.1f"
+unset logscale y
+set yrange [0:1]
+set output "comp_ycsbB_tuple1m_skew09_ope2-64_th_ar.pdf"
+plot \
+"result_tictoc_ycsbB_tuple1m_skew09_ope2-64_th+.dat"using 1:5:6:7 w errorlines pt 1 title "TicToc+TH", \
+"result_tictoc_ycsbB_tuple1m_skew09_ope2-64_th-.dat"using 1:5:6:7 w errorlines pt 2 title "TicToc-TH", \
+

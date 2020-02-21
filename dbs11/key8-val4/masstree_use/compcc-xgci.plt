@@ -53,6 +53,16 @@ plot \
 "result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 2 title "no inlining" axis x1y1 ,\
 #"result_cicada_ycsbA_tuple1m_prv100k_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 1 title "inlining+prv" axis x1y1 ,\
 
+set ytics auto
+set output "comp_cicada-ninline_ycsbA_tuple1m_gci1us-1s_tps.pdf"
+plot \
+"result_cicada_ycsbA_tuple1m_w1idr0us_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 1 title "0", \
+"result_cicada_ycsbA_tuple1m_w1idr100us_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 2 title "100us", \
+"result_cicada_ycsbA_tuple1m_w1idr1ms_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 3 title "1ms", \
+"result_cicada_ycsbA_tuple1m_w1idr10ms_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 4 title "10ms", \
+"result_cicada_ycsbA_tuple1m_w1idr100ms_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 5 title "100ms"
+unset yrange
+
 set ylabel "Max resident set size [KB]"
 set output "comp_cicada-inline_ycsbA_tuple1m_gci1us-1s_mr.pdf"
 plot \
@@ -97,6 +107,13 @@ set output "comp_cicada-inline_ycsbA_tuple1m_gci1us-1s_ar.pdf"
 plot \
 "result_cicada_ycsbA_tuple1m_gci1us-1s.dat" using 1:5:6:7 w errorlines pt 1 title "inlining" axis x1y1 ,\
 "result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:5:6:7 w errorlines pt 2 title "no inlining" axis x1y1 ,\
+
+set output "comp_cicada-ninline_ycsbA_tuple1m_gci1us-1s_ar.pdf"
+plot \
+"result_cicada_ycsbA_tuple1m_w1idr0us_gci1us-1s.dat" using 1:5:6:7 w errorlines pt 1 title "0", \
+"result_cicada_ycsbA_tuple1m_w1idr100us_gci1us-1s.dat" using 1:5:6:7 w errorlines pt 2 title "100us", \
+"result_cicada_ycsbA_tuple1m_w1idr1ms_gci1us-1s.dat" using 1:5:6:7 w errorlines pt 3 title "1ms", \
+"result_cicada_ycsbA_tuple1m_w1idr10ms_gci1us-1s.dat" using 1:5:6:7 w errorlines pt 4 title "10ms"
 
 unset yrange
 unset logscale x

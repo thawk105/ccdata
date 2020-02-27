@@ -294,6 +294,8 @@ set output "comp-silo-tictoc_tuple1k_rratio0-100_rr.pdf"
 plot \
 "result_tictoc_tuple1k_rratio0-100.dat" using 1:11 w lp title "TicToc", \
 
+unset xrange
+set xtics 0,1,10
 set ytics autofreq
 set xlabel "# writes in YCSB Transaction"
 moccXfunc(a) = 10 - a/10
@@ -302,6 +304,8 @@ set ylabel "Throughput [TPS]" offset -1,0
 unset yrange                                                                 
 set format y "%1.1t{/Symbol \264}10^{%T}"
 set logscale y
+unset key
+set terminal pdfcairo enhanced color size 5cm,3cm
 set output "comp-silo-mocc_tuple50_rratio10-100_tps.pdf"
 plot \
 "result_silo_tuple50_rratio0-100.dat" using (moccXfunc($1)):2:3:4 w errorlines pt 1 title "Silo", \
@@ -326,4 +330,3 @@ plot \
 "result_silo_tuple50_rratio0-100.dat" using (moccXfunc($1)):(g($8)):(g($9)):(g($10)) w errorlines pt 1 title "Silo", \
 "result_mocc_tuple50_rratio0-100.dat" using (moccXfunc($1)):(g($8)):(g($9)):(g($10)) w errorlines pt 2 title "MOCC", \
 
-set autoscale

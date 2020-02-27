@@ -28,7 +28,7 @@ set xtics 28, 28, 224
 set grid
 
 set ytics 30
-set terminal pdfcairo enhanced color size 5cm,5cm
+set terminal pdfcairo enhanced color size 5cm,3cm
 set format y "%1.0f"
 set ylabel "Throughput [MTPS]"
 set autoscale y

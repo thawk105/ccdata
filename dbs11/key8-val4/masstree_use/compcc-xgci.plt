@@ -26,7 +26,7 @@ set xlabel "GC Interval[us]"
 
 set grid
 
-set terminal pdfcairo enhanced color size 10cm,10cm
+set terminal pdfcairo enhanced color size 5cm,5cm
 set format y "%1.1t{/Symbol \264}10^{%T}"
 set format y2 "%1.1t{/Symbol \264}10^{%T}"
 set ylabel "Throughput [tps]"
@@ -46,21 +46,22 @@ plot \
 
 unset y2tics
 unset y2label
+unset format y 
 set ytics auto
+set ylabel "Throughput [MTPS]"
 set output "comp_cicada-inline_ycsbA_tuple1m_gci1us-1s_tps.pdf"
 plot \
-"result_cicada_ycsbA_tuple1m_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 1 title "inlining" axis x1y1 ,\
-"result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 2 title "no inlining" axis x1y1 ,\
+"result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "no inlining Cicada" axis x1y1 ,\
 #"result_cicada_ycsbA_tuple1m_prv100k_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 1 title "inlining+prv" axis x1y1 ,\
 
 set ytics auto
 set output "comp_cicada-ninline_ycsbA_tuple1m_gci1us-1s_tps.pdf"
 plot \
-"result_cicada_ycsbA_tuple1m_w1idr0us_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 1 title "0", \
-"result_cicada_ycsbA_tuple1m_w1idr100us_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 2 title "100us", \
-"result_cicada_ycsbA_tuple1m_w1idr1ms_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 3 title "1ms", \
-"result_cicada_ycsbA_tuple1m_w1idr10ms_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 4 title "10ms", \
-"result_cicada_ycsbA_tuple1m_w1idr100ms_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 5 title "100ms"
+"result_cicada_ycsbA_tuple1m_w1idr0us_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "0", \
+"result_cicada_ycsbA_tuple1m_w1idr100us_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "100us", \
+"result_cicada_ycsbA_tuple1m_w1idr1ms_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 3 title "1ms", \
+"result_cicada_ycsbA_tuple1m_w1idr10ms_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 4 title "10ms", \
+"result_cicada_ycsbA_tuple1m_w1idr100ms_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 5 title "100ms"
 unset yrange
 
 set ylabel "Max resident set size [KB]"

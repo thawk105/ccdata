@@ -1,2 +1,2 @@
-# Data of Redesign and Implemetn Many Concurrency Control
+# Data of Redesign and Implement Many Concurrency Control
 

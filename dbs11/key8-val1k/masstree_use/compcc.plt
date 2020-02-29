@@ -66,30 +66,29 @@ plot \
 
 set terminal pdfcairo enhanced color size 5cm,3cm
 unset yrange
-set key top outside box horizontal center
 set ytics autofreq
 set format y "%1.0f"
 set ylabel "Throughput [MTPS]" offset -1,0
 set xrange [0:80]
 set xtics 0,10,80
+set key top inside left top nobox vert
 set output "comp_tuple10m_val1k_ycsbC_tps.pdf"
 plot \
-"result_silo_ycsbC_tuple10m_ope2.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1,\
-"result_tictoc_ycsbC_tuple10m_ope2.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2,\
+"result_silo_ycsbC_tuple10m_ope2.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Silo",\
+"result_tictoc_ycsbC_tuple10m_ope2.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc",\
 
 set ytics 1
 set output "comp_tuple10m_val1k_ycsb_medium_tps.pdf"
 plot \
-"result_silo_ycsb_tuple10m_skew08.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1,\
-"result_tictoc_ycsb_tuple10m_skew08.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2,\
+"result_silo_ycsb_tuple10m_skew08.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 notitle,\
+"result_tictoc_ycsb_tuple10m_skew08.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 notitle,\
 
 set ytics 0.5
 set format y "%1.1f"
 set ylabel offset -1,-1
-set key right center outside box vertical
-set terminal pdfcairo enhanced color size 7cm,3cm
+set key at graph 0.43,0.95 font "Arial,9.5"
 set output "comp_tuple10m_val1k_ycsb_high_tps.pdf"
 plot \
-"result_silo_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Silo",\
-"result_tictoc_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2title "TicToc",\
-"result_tictoc+backoff_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "TicToc+BO", \
+"result_silo_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 notitle,\
+"result_tictoc_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 notitle,\
+"result_tictoc+backoff_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "TicToc+BO",\

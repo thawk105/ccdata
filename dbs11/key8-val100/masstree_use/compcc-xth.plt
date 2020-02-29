@@ -27,7 +27,7 @@ set xlabel "# Threads"
 set grid
 
 set key outside horiz center top nobox 
-set terminal pdfcairo enhanced color size 5cm,5cm
+set terminal pdfcairo enhanced color size 5cm,3cm
 set format y "%1.0f"
 set ytics 60
 set xtics 5

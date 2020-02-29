@@ -18,7 +18,7 @@ reset
 f(a) = a / 1e6
 g(a) = a / 1e2
 
-set key outside horiz center top box
+set key outside horiz center top nobox
 
 set autoscale x
 #set format x "%1.1t{/Symbol \264}10^{%T}"
@@ -27,20 +27,20 @@ set xlabel "Skew"
 set grid
 
 set xtics ('0' 0, '0.2' 0.2, '0.4' 0.4, '0.6' 0.6, '0.8' 0.8, '0.99' 0.99)
-set terminal pdfcairo enhanced color size 5cm,5cm
+set terminal pdfcairo enhanced color size 5cm,3cm
 set format y "%1.1f"
 set ytics 0.5
 set ylabel "Throughput [MTPS]"
 set autoscale y
 set output "comp_ycsbA_tuple10m_ope16_rmw_skew0-099_th28_tps.pdf"
 plot \
-"result_cicada_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Cicada" ,\
-"result_ermia_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "ERMIA" ,\
-"result_mocc_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "MOCC" ,\
-"result_si_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "SI" ,\
+"result_cicada_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 notitle,\
+"result_ermia_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 notitle,\
+"result_mocc_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 notitle,\
+"result_si_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 notitle,\
 "result_silo_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo",\
 "result_ss2pl_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "2PL" ,\
-"result_tictoc_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc"
+"result_tictoc_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 notitle
 
 set ytics 0.2
 set ylabel "Abort Ratio"
@@ -74,12 +74,12 @@ set ylabel "Throughput [MTPS]"
 set autoscale y
 set output "comp_ycsbB_tuple10m_ope16_rmw_skew0-099_th28_tps.pdf"
 plot \
-"result_cicada_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Cicada" ,\
-"result_ermia_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "ERMIA" ,\
-"result_mocc_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "MOCC" ,\
-"result_si_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "SI" ,\
-"result_silo_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo",\
-"result_ss2pl_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "2PL" ,\
+"result_cicada_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 notitle,\
+"result_ermia_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 notitle,\
+"result_mocc_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 notitle,\
+"result_si_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 notitle,\
+"result_silo_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 notitle,\
+"result_ss2pl_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 notitle,\
 "result_tictoc_ycsbB_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc"
 
 set ytics 0.2

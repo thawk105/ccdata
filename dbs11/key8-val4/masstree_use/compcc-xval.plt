@@ -32,19 +32,22 @@ set key center out top box horiz
 set autoscale x
 set xlabel "Payload Size"
 set xtics ('4' 4, '200' 200, '400' 400, '600' 600, '800' 800, '1000' 1000)
-set terminal pdfcairo enhanced color size 5cm,5cm
+set terminal pdfcairo enhanced color size 5cm,3cm
+set key nobox inside right top vert
+set ylabel offset 0,-1
 set ylabel "Throughput [MTPS]"
 #set format y "%2.1t{/Symbol \264}10^{%T}"
 set autoscale y
+set ytics 0.5
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_tps.pdf"
 plot \
-"result_cicada_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "Cicada", \
-"result_ermia_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "ERMIA", \
-"result_mocc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 3 title "MOCC", \
-"result_si_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 4 title "SI", \
-"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 6 title "Silo", \
-"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 8 title "2PL", \
-"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 10 title "TicToc", \
+"result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "Silo", \
+"result_tictoc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "TicToc", \
+#"result_ss2pl_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 8 title "2PL", \
+#"result_cicada_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "Cicada", \
+#"result_ermia_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "ERMIA", \
+#"result_mocc_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 3 title "MOCC", \
+#"result_si_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 4 title "SI", \
 
 set output "comp_ycsbB_tuple1m_skew099_val4-1k_tps.pdf"
 plot \
@@ -93,8 +96,10 @@ plot \
 #"result_tictoc-nw_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(k($2)):(k($3)):(k($4)) w errorlines pt 3 title "TicToc-nw", \
 #"result_tictoc-nw-ea_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(k($2)):(k($3)):(k($4)) w errorlines pt 4 title "TicToc-nw-ea", \
 
-set ylabel "Extra Reads [Millions/SEC]"
+set ylabel "Extra Reads [M/SEC]"
 set autoscale y
+set ytics 20
+set key at graph 1,0.95
 set output "comp_ycsbA_tuple100m_skew09_val4-1k_er.pdf"
 plot \
 "result_silo_ycsbA_tuple100m_skew09_val4-1k.dat" using 1:(m($11)) w errorlines pt 1 title "Silo", \

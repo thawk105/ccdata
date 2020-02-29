@@ -35,11 +35,14 @@ set autoscale y
 set key horiz out box center top
 set output "comp_ycsbB_tuple1m_skew099_slprp0-25000_tps.pdf"
 plot \
-"result_silo+nowait_ycsbB_tuple1m_skew099_slprp0-25000.dat" using 1:(m($2)) w lines title "Silo+NoWait" ,\
-"result_tictoc_ycsbB_tuple1m_skew099_slprp0-25000.dat" using 1:(m($2)) w lines title "TicToc" ,\
+"result_silo+nowait_ycsbB_tuple1m_skew099_slprp0-25000.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines title "Silo+NoWait" ,\
+"result_tictoc_ycsbB_tuple1m_skew099_slprp0-25000.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines title "TicToc" ,\
 
+set terminal pdfcairo enhanced color size 5cm,3cm
 set output "comp_ycsbA_tuple100m_skew09_slprp0-1000_tps.pdf"
 set ytics 0.4
+set ylabel offset 0,-1
+set key inside right top nobox vert font "Arial,8"
 plot \
 "result_silo+no-wait_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:(m($2)) w lines title "Silo+NoWait",\
 "result_silo_ycsbA_tuple100m_skew09_slprp0-1000.dat" using 1:(m($2)) w lines title "Silo" ,\

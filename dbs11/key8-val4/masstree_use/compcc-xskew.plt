@@ -36,7 +36,7 @@ set ytics autofreq
 set xlabel "Skew"
 
 #set xtics ('0' 0, '0.2' 0.2, '0.4' 0.4, '0.6' 0.6, '0.8' 0.8, '0.99' 0.99)
-set terminal pdfcairo enhanced color size 5cm,5cm
+set terminal pdfcairo enhanced color size 5cm,4cm
 set ylabel offset -1,-1
 set output "comp_ycsbB_tuple100m_skew0-099_tps.pdf"
 plot \
@@ -51,24 +51,25 @@ plot \
 set xtics 0.6,0.5,0.9
 set xtics (0.6,0.7,0.8,0.9,0.99)
 set output "comp_ycsbA_tuple100m_skew06-099_tps.pdf"
+set key center outside nobox top
 plot \
 "result_cicada_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "Cicada", \
-"result_ermia_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "ERMIA", \
-"result_mocc_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 4 title "MOCC", \
-"result_si_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 6 title "SI", \
-"result_silo_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 8 title "Silo", \
-"result_2pl_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 10 title "2PL", \
-"result_tictoc_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 12 title "TicToc", \
+"result_ermia_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "ERMIA" , \
+"result_mocc_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 4 notitle, \
+"result_si_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 6 notitle, \
+"result_silo_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 8 notitle, \
+"result_2pl_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 10 notitle, \
+"result_tictoc_ycsbA_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 12 notitle, \
 
 set output "comp_ycsbB_tuple100m_skew06-099_tps.pdf"
 plot \
-"result_cicada_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "Cicada", \
-"result_ermia_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "ERMIA", \
-"result_mocc_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 4 title "MOCC", \
-"result_si_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 6 title "SI", \
+"result_cicada_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 notitle , \
+"result_ermia_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 notitle , \
+"result_mocc_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 4 notitle , \
+"result_si_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 6 notitle , \
 "result_silo_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 8 title "Silo", \
 "result_2pl_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 10 title "2PL", \
-"result_tictoc_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 12 title "TicToc", \
+"result_tictoc_ycsbB_tuple100m_skew06-099.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 12 notitle , \
 
 set ylabel "Abort Ratio"
 set format y "%1.1f"
@@ -89,22 +90,22 @@ set xtics 0.6,0.5,0.9
 set xtics (0.6,0.7,0.8,0.9,0.99)
 set output "comp_ycsbA_tuple100m_skew06-099_ar.pdf"
 plot \
-"result_cicada_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 1 title "Cicada", \
-"result_ermia_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA", \
+"result_cicada_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 1 notitle , \
+"result_ermia_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 2 notitle , \
 "result_mocc_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 4 title "MOCC", \
 "result_si_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 6 title "SI", \
-"result_silo_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 8 title "Silo", \
-"result_2pl_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 10 title "2PL", \
-"result_tictoc_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 12 title "TicToc", \
+"result_silo_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 8 notitle , \
+"result_2pl_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 10 notitle , \
+"result_tictoc_ycsbA_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 12 notitle , \
 
 set output "comp_ycsbB_tuple100m_skew06-099_ar.pdf"
 plot \
-"result_cicada_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 1 title "Cicada", \
-"result_ermia_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA", \
-"result_mocc_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 4 title "MOCC", \
-"result_si_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 6 title "SI", \
-"result_silo_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 8 title "Silo", \
-"result_2pl_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 10 title "2PL", \
+"result_cicada_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 1 notitle , \
+"result_ermia_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 2 notitle , \
+"result_mocc_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 4 notitle , \
+"result_si_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 6 notitle , \
+"result_silo_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 8 notitle , \
+"result_2pl_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 10 notitle , \
 "result_tictoc_ycsbB_tuple100m_skew06-099.dat" using 1:5:6:7 w errorlines pt 12 title "TicToc", \
 
 set xtics ('0' 0, '0.2' 0.2, '0.4' 0.4, '0.6' 0.6, '0.8' 0.8, '0.99' 0.99)
@@ -124,11 +125,14 @@ set format y "%1.0f"
 set ylabel "Throughput [MTPS]"
 unset autoscale y
 set autoscale y
+set terminal pdfcairo enhanced color size 5cm,3cm
+set key inside nobox left bottom
+set key at graph 0.1,0.1
 set output "comp_ycsbB_tuple100m_skew06-085_tps.pdf"
 plot \
 "result_mocc_ycsbB_tuple100m_skew06-085.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "MOCC", \
-"result_ss2pl-dlr0_ycsbB_tuple100m_skew06-085.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "2PL-Wait",\
-"result_ss2pl_ycsbB_tuple100m_skew06-085.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 3 title "2PL-NoWait",\
+"result_ss2pl-dlr0_ycsbB_tuple100m_skew06-085.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 notitle,\
+"result_ss2pl_ycsbB_tuple100m_skew06-085.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 3 notitle ,\
 
 set ytics 0.2
 set ylabel "Abort Ratio" offset 0,0
@@ -136,15 +140,16 @@ set format y "%1.1f"
 set yrange [0:1]
 set output "comp_ycsbB_tuple100m_skew06-085_ar.pdf"
 plot \
-"result_mocc_ycsbB_tuple100m_skew06-085.dat" using 1:5:6:7 w errorlines pt 1 title "MOCC",\
-"result_ss2pl-dlr0_ycsbB_tuple100m_skew06-085.dat" using 1:5:6:7 w errorlines pt 2 title "2PL-Wait",\
-"result_ss2pl_ycsbB_tuple100m_skew06-085.dat" using 1:5:6:7 w errorlines pt 3 title "2PL-NoWait", \
+"result_mocc_ycsbB_tuple100m_skew06-085.dat" using 1:5:6:7 w errorlines pt 1 notitle ,\
+"result_ss2pl-dlr0_ycsbB_tuple100m_skew06-085.dat" using 1:5:6:7 w errorlines pt 2 notitle,\
+"result_ss2pl_ycsbB_tuple100m_skew06-085.dat" using 1:5:6:7 w errorlines pt 3 notitle , \
 
 set ylabel "Cache-Miss Ratio"
 set output "comp_ycsbB_tuple100m_skew06-085_cm.pdf"
+set key at graph 0.05,0.1
 plot \
-"result_mocc_ycsbB_tuple100m_skew06-085.dat" using 1:(h($8)):(h($9)):(h($10)) w errorlines pt 1 title "MOCC",\
-"result_ss2pl-dlr0_ycsbB_tuple100m_skew06-085.dat" using 1:(h($8)):(h($9)):(h($10)) w errorlines pt 2 title "2PL-Wait", \
+"result_mocc_ycsbB_tuple100m_skew06-085.dat" using 1:(h($8)):(h($9)):(h($10)) w errorlines pt 1 notitle ,\
+"result_ss2pl-dlr0_ycsbB_tuple100m_skew06-085.dat" using 1:(h($8)):(h($9)):(h($10)) w errorlines pt 2 title "2PL-Wait",\
 "result_ss2pl_ycsbB_tuple100m_skew06-085.dat" using 1:(h($8)):(h($9)):(h($10)) w errorlines pt 3 title "2PL-NoWait"
 
                                                                        

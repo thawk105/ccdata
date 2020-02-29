@@ -146,7 +146,6 @@ set format y2 "%1.1f"
 
 set grid
 
-set terminal pdfcairo enhanced color size 5cm,5cm
 unset format y
 unset xlabel
 set output "comp_cicada_ycsbA_tuple1m_gci10us-1s_main-latency.pdf"
@@ -162,6 +161,7 @@ plot \
 "result_cicada_ycsbA_tuple1m_gci10us-1s.dat" using (i(h($2),$15)) w histogram title "GC",\
 "result_cicada_ycsbA_tuple1m_gci10us-1s.dat" using (j(h($2),i(h($2),$11),i(h($2),$12),i(h($2),$13),i(h($2),$14),i(h($2),$15))) w histogram title "Other"
 
+set terminal pdfcairo enhanced color size 5cm,4cm
 set output "comp_cicada-silo_ycsbA_tuple100m_gci10us_224th_main-latency.pdf"
 set style histogram rowstacked
 set boxwidth 0.5 relative
@@ -171,18 +171,18 @@ plot \
 "result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$11)):xticlabels(1) w histogram title "Gen. Workload",\
 "result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$12)) w histogram title "Read",\
 "result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$13)) w histogram title "Write",\
-"result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$14)) w histogram title "Validation",\
-"result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$15)) w histogram title "GC",\
-"result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (j(h($2),i(h($2),$11),i(h($2),$12),i(h($2),$13),i(h($2),$14),i(h($2),$15))) w histogram title "Other",\
+"result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$14)) w histogram notitle ,\
+"result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (i(h($2),$15)) w histogram notitle ,\
+"result_cicada-silo_ycsbA_tuple100m_gci10us_224th.dat" using (j(h($2),i(h($2),$11),i(h($2),$12),i(h($2),$13),i(h($2),$14),i(h($2),$15))) w histogram notitle ,\
 
 set output "comp_cicada-silo_ycsbB_tuple100m_gci10us_224th_main-latency.pdf"
 set style histogram rowstacked
 set boxwidth 0.5 relative
 set style fill solid border lc rgb "black"
 plot \
-"result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$11)):xticlabels(1) w histogram title "Gen. Workload",\
-"result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$12)) w histogram title "Read",\
-"result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$13)) w histogram title "Write",\
+"result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$11)):xticlabels(1) w histogram notitle ,\
+"result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$12)) w histogram notitle ,\
+"result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$13)) w histogram notitle ,\
 "result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$14)) w histogram title "Validation",\
 "result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (i(h($2),$15)) w histogram title "GC",\
 "result_cicada-silo_ycsbB_tuple100m_gci10us_224th.dat" using (j(h($2),i(h($2),$11),i(h($2),$12),i(h($2),$13),i(h($2),$14),i(h($2),$15))) w histogram title "Other",\

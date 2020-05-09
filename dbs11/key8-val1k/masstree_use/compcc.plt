@@ -71,7 +71,7 @@ set format y "%1.0f"
 set ylabel "Throughput [MTPS]" offset -1,0
 set xrange [0:80]
 set xtics 0,10,80
-set key top inside left top nobox vert
+set key top inside left nobox vert
 set output "comp_tuple10m_val1k_ycsbC_tps.pdf"
 plot \
 "result_silo_ycsbC_tuple10m_ope2.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Silo",\
@@ -92,3 +92,25 @@ plot \
 "result_silo_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 notitle,\
 "result_tictoc_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 notitle,\
 "result_tictoc+backoff_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "TicToc+BO",\
+
+set terminal pdfcairo enhanced color size 5cm,5cm
+set ytics 0.5
+set format y "%1.1f"
+set ylabel offset 0,0
+set key top outside center box horiz
+set output "comp_tuple10m_val1k_ycsb_high_cmp-no-wait_tps.pdf"
+plot \
+"result_tictoc_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc+NW'",\
+"result_tictoc+backoff_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "TicToc+BO",\
+"result_tictoc-original-no-wait_ycsb_tuple10m_skew09.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "TicToc+ONW",\
+
+set ytics 0.2
+set ylabel "Abort Ratio"
+set format y "%1.1f"
+set yrange [0:1]
+set output "comp_tuple10m_val1k_ycsb_high_cmp-no-wait_ar.pdf"
+plot \
+"result_tictoc_ycsb_tuple10m_skew09.dat" using         1:5:6:7 w errorlines pt 2 title "TicToc+NW'",\
+"result_tictoc+backoff_ycsb_tuple10m_skew09.dat" using 1:5:6:7 w errorlines pt 3 title "TicToc+BO",\
+"result_tictoc-original-no-wait_ycsb_tuple10m_skew09.dat" using         1:5:6:7 w errorlines pt 4 title "TicToc+ONW",\
+

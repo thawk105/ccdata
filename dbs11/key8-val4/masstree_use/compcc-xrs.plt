@@ -56,12 +56,12 @@ set ytics 20
 set output "comp_tuple1k-1g_ycsbB_tps.pdf"
 set key vert
 plot \
-"result_cicada_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 notitle,\
-"result_ermia_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "ERMIA",\
-"result_mocc_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "MOCC" ,\
+"result_cicada_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Cicada",\
+"result_ermia_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 notitle,\
+"result_mocc_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 notitle,\
 "result_si_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "SI" ,\
-"result_silo_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo" ,\
-"result_ss2pl_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "2PL" ,\
+"result_silo_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 notitle ,\
+"result_ss2pl_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 notitle ,\
 "result_tictoc_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 notitle,\
 
 set output "comp_tuple1k-1g_ycsbC_tps.pdf"
@@ -70,8 +70,8 @@ plot \
 "result_ermia_ycsbC_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 notitle,\
 "result_mocc_ycsbC_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 notitle,\
 "result_si_ycsbC_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 notitle,\
-"result_silo_ycsbC_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 notitle,\
-"result_ss2pl_ycsbC_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 notitle,\
+"result_silo_ycsbC_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 6 title "Silo" ,\
+"result_ss2pl_ycsbC_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 8 title "2PL",\
 "result_tictoc_ycsbC_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 10 title "TicToc" ,\
 
 set ytics 0,0.2,1
@@ -93,8 +93,8 @@ plot \
 set output "comp_tuple1k-1g_ycsbB_ar.pdf"
 plot \
 "result_cicada_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 1 notitle ,\
-"result_ermia_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 2 notitle ,\
-"result_mocc_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 3 notitle ,\
+"result_ermia_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 2 title "ERMIA",\
+"result_mocc_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 3 title "MOCC",\
 "result_si_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 4 notitle ,\
 "result_silo_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 6 notitle ,\
 "result_ss2pl_ycsbB_tuple1k-1g.dat" using 1:5:6:7 w errorlines pt 8 notitle ,\

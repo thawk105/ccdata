@@ -138,7 +138,8 @@ plot \
 "result_tictoc_tuple1k_rratio10-90.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc", \
 #"result_tictoc--_tuple1k_rratio10-90.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc--", \
 
-set key vert font "Arial,10" nobox at 40,25
+set terminal pdfcairo enhanced color size 5cm,4cm
+set key vert font "Arial,10" nobox at 40,27
 set ytics 10
 set ylabel "Throughput [MTPS]" offset 0,0
 unset yrange                                                                 

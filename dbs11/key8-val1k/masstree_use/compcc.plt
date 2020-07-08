@@ -71,18 +71,22 @@ set format y "%1.0f"
 set ylabel "Throughput [MTPS]" offset 0,0 font "Arial,10"
 set xrange [0:80]
 set xtics 0,10,80
-set key top inside left nobox vert
+set key top inside left nobox vert font "Arial,11"
 set output "comp_tuple10m_val1k_ycsbC_tps.pdf"
 plot \
 "result_silo_ycsbC_tuple10m_ope2.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Silo",\
-"result_tictoc_ycsbC_tuple10m_ope2.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 notitle,\
+"result_tictoc_ycsbC_tuple10m_ope2.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc",\
+"result_dbx1000-silo-tictoc_ycsbC_tuple10m_ope2.dat" using 1:2 w lp pt 5 notitle,\
+"result_dbx1000-silo-tictoc_ycsbC_tuple10m_ope2.dat" using 1:3 w lp pt 6 notitle,\
 
 set ytics 1
-set key bottom right at graph 1.0,0.05
+set key inside left nobox vert font "Arial,7" spacing 1.5
 set output "comp_tuple10m_val1k_ycsb_medium_tps.pdf"
 plot \
 "result_silo_ycsb_tuple10m_skew08.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 notitle,\
-"result_tictoc_ycsb_tuple10m_skew08.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc'",\
+"result_tictoc_ycsb_tuple10m_skew08.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 notitle,\
+"result_dbx1000-silo-tictoc_tuple10m_skew08.dat" using 1:2 w lp pt 5 title "DBx1000-Silo",\
+"result_dbx1000-silo-tictoc_tuple10m_skew08.dat" using 1:2 w lp pt 6 title "DBx1000-TicToc",\
 
 set ytics 0.5
 set format y "%1.1f"

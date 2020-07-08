@@ -335,16 +335,17 @@ set ytics autofreq
 set xlabel "# writes in YCSB Transaction"
 moccXfunc(a) = 10 - a/10
 set autoscale x
-set ylabel "Throughput [TPS]" offset -1,0
+set ylabel "Throughput [TPS]" offset 0,-1
 unset yrange                                                                 
 set format y "%1.1t{/Symbol \264}10^{%T}"
 set logscale y
-unset key
+set key inside top right vert nobox font "Arial,9"
 set terminal pdfcairo enhanced color size 5cm,3cm
 set output "comp-silo-mocc_tuple50_rratio10-100_tps.pdf"
 plot \
-"result_silo_tuple50_rratio0-100.dat" using (moccXfunc($1)):2:3:4 w errorlines pt 1 title "Silo", \
+"result_silo_tuple50_rratio0-100.dat" using (moccXfunc($1)):2:3:4 w errorlines pt 1 notitle, \
 "result_mocc_tuple50_rratio0-100.dat" using (moccXfunc($1)):2:3:4 w errorlines pt 2 title "MOCC", \
+"result_dbx1000-silo_tuple50_rratio0-100.dat" using 1:2 w lp pt 3 title "DBx1000-Silo",\
 
 set ytics 0.2
 unset logscale y
@@ -354,8 +355,9 @@ set yrange [0:1]
 
 set output "comp-silo-mocc_tuple50_rratio10-100_ar.pdf"
 plot \
-"result_silo_tuple50_rratio0-100.dat" using (moccXfunc($1)):5:6:7 w errorlines pt 1 title "Silo", \
-"result_mocc_tuple50_rratio0-100.dat" using (moccXfunc($1)):5:6:7 w errorlines pt 2 title "MOCC", \
+"result_silo_tuple50_rratio0-100.dat" using (moccXfunc($1)):5:6:7 w errorlines pt 1 notitle, \
+"result_mocc_tuple50_rratio0-100.dat" using (moccXfunc($1)):5:6:7 w errorlines pt 2 notitle, \
+"result_dbx1000-silo_tuple50_rratio0-100.dat" using 1:3 w lp pt 3 notitle ,\
 
 set xtics
 set ylabel "Cache-Miss Ratio"

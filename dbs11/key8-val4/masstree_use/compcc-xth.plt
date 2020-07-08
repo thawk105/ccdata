@@ -24,7 +24,7 @@ set autoscale x
 #set format x "%1.1t{/Symbol \264}10^{%T}"
 #set format x "10^{%T}"
 set xlabel "# Threads"
-set xtics 28, 28, 224
+set xtics 56, 56, 224
 set grid
 
 set ytics 30
@@ -34,8 +34,9 @@ set ylabel "Throughput [MTPS]"
 set autoscale y
 set output "comp_ycsbC_tuple50_tps.pdf"
 plot \
-"result_silo_ycsbC_tuple50.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "Silo" ,\
-"result_mocc_ycsbC_tuple50.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "MOCC" ,\
+"result_silo_ycsbC_tuple50.dat"         using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "Silo",\
+"result_mocc_ycsbC_tuple50.dat"         using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 notitle ,\
+"result_dbx1000-silo_ycsbC_tuple50.dat" using 1:(m($2)) w lp pt 3 notitle,\
 
 set ytics auto
 set xtics auto

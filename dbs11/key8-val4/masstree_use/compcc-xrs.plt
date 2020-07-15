@@ -54,6 +54,8 @@ plot \
 
 set ytics 20
 set output "comp_tuple1k-1g_ycsbB_tps.pdf"
+set format y "%3.0f"
+set ylabel offset 0,0
 set key vert
 plot \
 "result_cicada_ycsbB_tuple1k-1g.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Cicada",\

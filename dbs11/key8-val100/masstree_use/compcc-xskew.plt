@@ -29,8 +29,8 @@ set grid
 set xtics ('0' 0, '0.2' 0.2, '0.4' 0.4, '0.6' 0.6, '0.8' 0.8, '0.99' 0.99)
 set terminal pdfcairo enhanced color size 5cm,3cm
 set format y "%1.1f"
-set ytics 0.5
-set ylabel "Throughput [MTPS]"
+set ytics 1
+set ylabel "Throughput [MTPS]" font "Arial,11"
 set autoscale y
 set output "comp_ycsbA_tuple10m_ope16_rmw_skew0-099_th28_tps.pdf"
 plot \
@@ -69,7 +69,7 @@ plot \
 "result_tictoc_ycsbA_tuple10m_ope16_rmw_skew0-099_th28.dat" using 1:(g($8)):(g($9)):(g($10)) w errorlines pt 10 title "TicToc" ,\
 
 set format y "%1.1f"
-set ytics 0.5
+set ytics 1
 set ylabel "Throughput [MTPS]"
 set autoscale y
 set output "comp_ycsbB_tuple10m_ope16_rmw_skew0-099_th28_tps.pdf"

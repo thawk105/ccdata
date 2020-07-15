@@ -33,10 +33,10 @@ set format y "%1.0f"
 set ylabel "Throughput [MTPS]"
 set autoscale y
 set output "comp_ycsbC_tuple50_tps.pdf"
+set key font "Arial,10"
 plot \
 "result_silo_ycsbC_tuple50.dat"         using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "Silo",\
-"result_mocc_ycsbC_tuple50.dat"         using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 notitle ,\
-"result_dbx1000-silo_ycsbC_tuple50.dat" using 1:(m($2)) w lp pt 3 notitle,\
+"result_mocc_ycsbC_tuple50.dat"         using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "MOCC",\
 
 set ytics auto
 set xtics auto

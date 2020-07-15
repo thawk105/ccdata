@@ -36,6 +36,7 @@ set xtics 20
 set xrange [10:100]
 set terminal pdfcairo enhanced color size 5cm,3cm
 set ylabel "Throughput [MTPS]"
+set format y "10^{%T}"
 set logscale y
 set key inside nobox top right
 set ylabel offset 0,-1

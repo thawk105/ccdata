@@ -1,29 +1,6 @@
 reset
 
-#set xlabel font "Courier,27"
-#set ylabel font "Courier,27"
-#set tics   font "Courier,27"
-#set key    font "Courier,8"
-#set key spacing 1
-#
-#set xtics  offset 0,-1
-#set xlabel offset 0,-2
-#set ylabel offset -0.6,-1
-#
-#set tmargin 8
-#set lmargin 20 
-#set bmargin 7
-#set rmargin 7
-
-#m(a) = a / 1e6
-#h(a) = a / 1e2
-
-#set key right bottom
-
 set autoscale x
-#set format x "%1.1t{/Symbol \264}10^{%T}"
-#set format x "10^{%T}"
-#set xtics 56, 56, 224
 set grid
 
 set terminal pdfcairo enhanced color size 10cm,5cm

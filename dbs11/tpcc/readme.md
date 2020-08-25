@@ -1,9 +1,9 @@
 # Experimental data of TPC-C-NP
 
 ## Thanks for taking data. (in random number)
-- Mr. Jun Nemoto
+- Jun Nemoto
   - results_20200824_r2
-- Mr. Masahiro Tanaka
+- Masahiro Tanaka
   - CCBench-tpcc_silo-0825
   - DBx1000-TPCC-NP-TrimComment
 

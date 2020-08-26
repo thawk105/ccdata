@@ -7,6 +7,7 @@
 - Masahiro Tanaka
   - data : CCBench-tpcc_silo-0825
   - data : DBx1000-TPCC-NP-TrimComment
+  - data : DBx1000-TPCC-NP-TrimComment-median
   - data : CCBench-TPCC-NP-0826r4
   - forked repository : https://github.com/masa16/DBx1000/tree/TPCC_TRIM_COMMENT
   - script : bench0825r3_sh.sh

@@ -31,7 +31,7 @@ plot \
 "dbx1000.dat"   using 1:4 w lp notitle ,\
 "dbx1000-c.dat" using 1:4 w lp notitle ,\
 
-set xrange [0:50]
+set xrange [0:28]
 set ytics 0.1
 set output "comp_no-insert_w1_x0-50.pdf"
 plot \
@@ -75,7 +75,7 @@ plot \
 "dbx1000.dat"   using 1:7 w lp notitle ,\
 "dbx1000-c.dat" using 1:7 w lp notitle ,\
 
-set xrange [0:50]
+set xrange [0:28]
 set ytics 0.1
 set output "comp_insert_w1_x0-50.pdf"
 plot \

@@ -97,3 +97,30 @@ plot \
 "dbx1000.dat"   using 1:7 w lp notitle ,\
 "dbx1000-c.dat" using 1:7 w lp notitle ,\
 
+set autoscale x
+set autoscale y
+set xlabel "# Warehouse" font "Arial,15" 
+set format y "%1.0f"
+set ytics 5
+set key left inside top
+set output "comp_no-insert_224th_sweap_wh.pdf"
+plot \
+"ccb_sweap_wh.dat"       using 1:2 w lp title "CCBench",\
+"dbx1000_sweap_wh.dat"   using 1:2 w lp title "DBx1000",\
+
+set ytics 4
+set output "comp_no-insert_96th_sweap_wh.pdf"
+plot \
+"dbx1000-c_sweap_wh.dat" using 1:2 w lp title "DBx1000(c)",\
+
+set ytics 2
+set output "comp_insert_224th_sweap_wh.pdf"
+plot \
+"ccb_sweap_wh.dat"       using 1:3 w lp title "CCBench",\
+"dbx1000_sweap_wh.dat"   using 1:3 w lp title "DBx1000",\
+
+set ytics 4
+set output "comp_insert_96th_sweap_wh.pdf"
+plot \
+"dbx1000-c_sweap_wh.dat" using 1:3 w lp title "DBx1000(c)",\
+

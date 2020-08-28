@@ -68,6 +68,7 @@ plot \
 set format y "10^{%T}"
 set ylabel "Throughput [TPS]"
 set xtics (0.9,0.95,0.99)
+set ytics (100, 1000, 10000, 100000, 1000000, 10000000)
 set logscale y
 set output "comp_ycsbA_tuple100m_skew09-099_tps.pdf"
 plot [0.9:0.99] \
@@ -83,6 +84,7 @@ set format y "%1.0f"
 set ylabel "Throughput [MTPS]"
 set xtics 0.6,0.5,0.9
 set xtics (0.6,0.7,0.8,0.9,0.99)
+set ytics (1000, 10000, 100000, 1000000, 10000000, 100000000)
 unset logscale y
 set output "comp_ycsbB_tuple100m_skew06-099_tps.pdf"
 plot \

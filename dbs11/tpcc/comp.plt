@@ -102,25 +102,19 @@ set autoscale y
 set xlabel "# Warehouse" font "Arial,15" 
 set format y "%1.0f"
 set ytics 5
-set key left inside top
-set output "comp_no-insert_224th_sweap_wh.pdf"
+set key right inside bottom
+set output "comp_no-insert_sweep_wh.pdf"
 plot \
-"ccb_sweap_wh.dat"       using 1:2 w lp title "CCBench",\
-"dbx1000_sweap_wh.dat"   using 1:2 w lp title "DBx1000",\
-
-set ytics 4
-set output "comp_no-insert_96th_sweap_wh.pdf"
-plot \
-"dbx1000-c_sweap_wh.dat" using 1:2 w lp title "DBx1000(c)",\
+"ccb_sweep_wh.dat"       using 1:2 w lp title "CCBench-224th",\
+"dbx1000_sweep_wh.dat"   using 1:2 w lp title "DBx1000-224th",\
+"dbx1000-c_sweep_wh.dat" using 1:2 w lp title "DBx1000(c)-96th",\
 
 set ytics 2
-set output "comp_insert_224th_sweap_wh.pdf"
+set key right inside top
+set output "comp_insert_sweep_wh.pdf"
 plot \
-"ccb_sweap_wh.dat"       using 1:3 w lp title "CCBench",\
-"dbx1000_sweap_wh.dat"   using 1:3 w lp title "DBx1000",\
+"ccb_sweep_wh.dat"       using 1:3 w lp title "CCBench-224th",\
+"dbx1000_sweep_wh.dat"   using 1:3 w lp title "DBx1000-224th",\
+"dbx1000-c_sweep_wh.dat" using 1:3 w lp title "DBx1000(c)-96th",\
 
-set ytics 4
-set output "comp_insert_96th_sweap_wh.pdf"
-plot \
-"dbx1000-c_sweap_wh.dat" using 1:3 w lp title "DBx1000(c)",\
 

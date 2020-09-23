@@ -31,7 +31,7 @@ h(a) = a / 1e6
 set ytics autofreq
 
 set key outside center top horiz box
-set xlabel "# Operations / Transaction"
+set xlabel "# Operations/Transaction"
 set xtics 20
 set xrange [10:100]
 set terminal pdfcairo enhanced color size 5cm,3cm

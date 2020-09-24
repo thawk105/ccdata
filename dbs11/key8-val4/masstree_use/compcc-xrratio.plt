@@ -147,10 +147,10 @@ set format y "%1.0f"
 set autoscale y
 set output "comp-silo-tictoc_rratio10-90_tps.pdf"
 plot \
-"result_silo_tuple1k_rratio10-90.dat"   using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Silo-1K", \
-"result_tictoc_tuple1k_rratio10-90.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc-1K", \
-"result_silo_tuple1m_rratio10-90.dat"   using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "Silo-1M", \
-"result_tictoc_tuple1m_rratio10-90.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "TicToc-1M", \
+"result_silo_tuple1k_rratio10-90.dat"   using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 1 title "Silo-1 K", \
+"result_tictoc_tuple1k_rratio10-90.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc-1 K", \
+"result_silo_tuple1m_rratio10-90.dat"   using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 3 title "Silo-1 M", \
+"result_tictoc_tuple1m_rratio10-90.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 4 title "TicToc-1 M", \
 #"result_tictoc--_tuple1k_rratio10-90.dat" using 1:(f($2)):(f($3)):(f($4)) w errorlines pt 2 title "TicToc--", \
 
 set ytics 0.2

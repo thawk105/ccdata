@@ -22,7 +22,7 @@ set key outside horiz center top box
 
 #set format x "%1.0t{/Symbol \264}10^{%T}"
 set format x "10^{%T}"
-set xlabel "GC Interval[us]"
+set xlabel "GC Interval [us]"
 
 set grid
 
@@ -54,14 +54,16 @@ plot \
 "result_cicada-inline_ycsbA_tuple1m_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "no inlining Cicada" axis x1y1 ,\
 #"result_cicada_ycsbA_tuple1m_prv100k_gci1us-1s.dat" using 1:2:3:4 w errorlines pt 1 title "inlining+prv" axis x1y1 ,\
 
-set ytics auto
+set ytics 4
+set key inside top right vert nobox font "Arial,8"
+set xtics(1, 100, 10000, 1000000)
 set output "comp_cicada-ninline_ycsbA_tuple1m_gci1us-1s_tps.pdf"
 plot \
-"result_cicada_ycsbA_tuple1m_w1idr0us_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "0", \
-"result_cicada_ycsbA_tuple1m_w1idr100us_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "100us", \
-"result_cicada_ycsbA_tuple1m_w1idr1ms_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 3 title "1ms", \
-"result_cicada_ycsbA_tuple1m_w1idr10ms_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 4 title "10ms", \
-"result_cicada_ycsbA_tuple1m_w1idr100ms_gci1us-1s.dat" using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 5 title "100ms"
+"result_cicada_ycsbA_tuple1m_w1idr0us_gci1us-1s.dat"    using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 1 title "0", \
+"result_cicada_ycsbA_tuple1m_w1idr100us_gci1us-1s.dat"  using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 2 title "100 us", \
+"result_cicada_ycsbA_tuple1m_w1idr1ms_gci1us-1s.dat"    using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 3 title "1 ms", \
+"result_cicada_ycsbA_tuple1m_w1idr10ms_gci1us-1s.dat"   using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 4 title "10 ms", \
+"result_cicada_ycsbA_tuple1m_w1idr100ms_gci1us-1s.dat"  using 1:(m($2)):(m($3)):(m($4)) w errorlines pt 5 title "100 ms"
 unset yrange
 
 set ylabel "Max resident set size [KB]"
